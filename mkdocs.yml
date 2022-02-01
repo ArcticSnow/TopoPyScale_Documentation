@@ -1,0 +1,9 @@
+site_name: TopoPyScale
+site_url: https://example.com/
+site_author: Simon Filhol, Joel Fiddes
+copyright: GNU GPL3
+nav:
+    - Home: index.md
+    - Quick Start: quickstart.md
+    - About: about.md
+theme: material

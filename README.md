@@ -1,2 +1,31 @@
 # TopoPyScale_Documentation
-Documentation of TopoPyScale
+Documentation of the TopoPyScale toolbox
+
+*S. Filhol, J. Fiddes*, January 2022
+
+
+
+## Contributing to the Documentation
+
+The documentation is written in Markdown with the tool https://www.mkdocs.org
+
+1. Create a local Python VE 
+
+   ```bash
+   conda create -n rtdoc
+   conda activate rtdoc
+   pip install mkdocs
+   
+   # cloning using SSH key
+   git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git
+   cd TopoPyScale_Documenation
+   ```
+
+2. Modify a given file or create a new one. If you create a new one add it to `mkdocs.yml`
+
+3. run `mkdocs serve` to visualize the modification on your local machine
+
+4. open the URL: http://127.0.0.1:8000/ in your browser
+
+
+
