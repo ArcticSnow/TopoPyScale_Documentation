@@ -24,6 +24,6 @@ mkdocs:
 #    - pdf
 
 # Optionally declare the Python requirements required to build your docs
-python:
-   install:
-   - requirements: py_env.yml
+#python:
+#   install:
+#   - requirements: py_env.yml
