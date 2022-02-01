@@ -313,63 +313,63 @@
 <li>Configure the file <code>config.ini</code> to fit your problem (see <a href="https://github.com/ArcticSnow/TopoPyScale/blob/main/TopoPyScale/config.ini"><code>config.ini</code></a> for an example)</li>
 <li>Run TopoPyScale</li>
 </ol>
-<pre><code class="language-python">import pandas as pd
-from TopoPyScale import topoclass as tc
-from matplotlib import pyplot as plt
-
-# ========= STEP 1 ==========
-# Load Configuration
-config_file = './config.ini'
-mp = tc.Topoclass(config_file)
-# Compute parameters of the DEM (slope, aspect, sky view factor)
-mp.compute_dem_param()
-
-# ========== STEP 2 ===========
-# Extract DEM parameters for points of interest (centroids or physical points)
-
-# ----- Option 1:
-# Compute clustering of the input DEM and extract cluster centroids
-mp.extract_dem_cluster_param()
-# plot clusters
-mp.toposub.plot_clusters_map()
-# plot sky view factor
-mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
-
-# ------ Option 2:
-# inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)
-mp.extract_pts_param(method='linear',index_col=0)
-
-# ========= STEP 3 ==========
-# compute solar geometry and horizon angles
-mp.compute_solar_geometry()
-mp.compute_horizon()
-
-# ========= STEP 4 ==========
-# Perform the downscaling
-mp.downscale_climate()
-
-# ========= STEP 5 ==========
-# explore the downscaled dataset. For instance the temperature difference between each point and the first one
-(mp.downscaled_pts.t-mp.downscaled_pts.t.isel(point_id=0)).plot()
-plt.show()
-
-# ========= STEP 6 ==========
-# Export output to desired format
-mp.to_netcdf()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">TopoPyScale</span> <span class="kn">import</span> <span class="n">topoclass</span> <span class="k">as</span> <span class="n">tc</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ========= STEP 1 ==========</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Load Configuration</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">config_file</span> <span class="o">=</span> <span class="s1">&#39;./config.ini&#39;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">mp</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="n">Topoclass</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Compute parameters of the DEM (slope, aspect, sky view factor)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">mp</span><span class="o">.</span><span class="n">compute_dem_param</span><span class="p">()</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># ========== STEP 2 ===========</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Extract DEM parameters for points of interest (centroids or physical points)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># ----- Option 1:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Compute clustering of the input DEM and extract cluster centroids</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">mp</span><span class="o">.</span><span class="n">extract_dem_cluster_param</span><span class="p">()</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># plot clusters</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">mp</span><span class="o">.</span><span class="n">toposub</span><span class="o">.</span><span class="n">plot_clusters_map</span><span class="p">()</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># plot sky view factor</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">mp</span><span class="o">.</span><span class="n">toposub</span><span class="o">.</span><span class="n">plot_clusters_map</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s1">&#39;svf&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># ------ Option 2:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">mp</span><span class="o">.</span><span class="n">extract_pts_param</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1"># ========= STEP 3 ==========</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1"># compute solar geometry and horizon angles</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">mp</span><span class="o">.</span><span class="n">compute_solar_geometry</span><span class="p">()</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">mp</span><span class="o">.</span><span class="n">compute_horizon</span><span class="p">()</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="c1"># ========= STEP 4 ==========</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># Perform the downscaling</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="n">mp</span><span class="o">.</span><span class="n">downscale_climate</span><span class="p">()</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="c1"># ========= STEP 5 ==========</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="c1"># explore the downscaled dataset. For instance the temperature difference between each point and the first one</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">downscaled_pts</span><span class="o">.</span><span class="n">t</span><span class="o">-</span><span class="n">mp</span><span class="o">.</span><span class="n">downscaled_pts</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">point_id</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="c1"># ========= STEP 6 ==========</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="c1"># Export output to desired format</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="n">mp</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">()</span>
+</code></pre></div>
 <p>TopoClass will create a file structure in the project folder (see below). TopoPyScale assumes you have a DEM in GeoTiFF, and a set of climate data in netcdf (following ERA5 variable conventions). 
-TopoPyScale can easier segment the DEM using clustering (e.g. K-mean), or a list of predefined point coordinates in <code>pts_list.csv</code> can be provided. Make sure all parameters in <code>config.ini</code> are correct.</p>
-<pre><code>my_project/
-    ├── inputs/
-        ├── dem/ 
-            ├── my_dem.tif
-            └── pts_list.csv  (optional)
-        └── climate/
-            ├── PLEV*.nc
-            └── SURF*.nc
-    ├── outputs/
-    └── config.ini
-</code></pre>
+TopoPyScale can easier segment the DEM using clustering (e.g. K-mean), or a list of predefined point coordinates in <code>pts_list.csv</code> can be provided. Make sure all parameters in <code>config.ini</code> are correct.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>my_project/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ├── inputs/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        ├── dem/ 
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            ├── my_dem.tif
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            └── pts_list.csv  (optional)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        └── climate/
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            ├── PLEV*.nc
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            └── SURF*.nc
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    ├── outputs/
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    └── config.ini
+</code></pre></div></p>
 
               
             </article>

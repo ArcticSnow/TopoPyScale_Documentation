@@ -1,0 +1,8 @@
+name: docu_mkdocs
+channels:
+  - defaults
+dependencies:
+  - pip:
+    - pygments
+    - mkdocs
+    - mkdocs-material

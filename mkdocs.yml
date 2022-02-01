@@ -7,3 +7,10 @@ nav:
     - Quick Start: quickstart.md
     - About: about.md
 theme: material
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
