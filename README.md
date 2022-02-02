@@ -14,7 +14,7 @@ The documentation is written in Markdown with the tool https://www.mkdocs.org
    ```bash
    conda create -n rtdoc
    conda activate rtdoc
-   pip install mkdocs sphinx_rtd_theme 
+   pip install mkdocs sphinx_rtd_theme mkdocs-material pygments
    
    # cloning using SSH key
    git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git
