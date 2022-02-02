@@ -25,6 +25,12 @@ mkdocs:
 
 # Optionally declare the Python requirements required to build your docs
 python:
+   version: "3.9"
    install:
-   - requirements: requirements.txt
-   - method: pip
+      - method: pip
+        path: .
+        extra_requirements:
+          - mkdocs
+          - mkdocs-material
+          - pygments
+   
