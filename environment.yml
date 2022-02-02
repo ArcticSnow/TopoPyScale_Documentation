@@ -1,7 +1,9 @@
-name: docu_mkdocs
+name: rtd38
 channels:
   - defaults
 dependencies:
+  - python=3.8
+  - pip
   - pip:
     - pygments
     - mkdocs
