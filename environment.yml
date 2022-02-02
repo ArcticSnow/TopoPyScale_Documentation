@@ -1,9 +1,9 @@
-name: rtd38
+name: latest
 channels:
   - defaults
 dependencies:
-  - python=3.8
-  - pip
+  - python=3.9
+  - pip=22.0.2
   - pip:
     - pygments
     - mkdocs

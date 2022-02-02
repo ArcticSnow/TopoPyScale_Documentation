@@ -14,7 +14,7 @@ The documentation is written in Markdown with the tool https://www.mkdocs.org
    ```bash
    conda create -n rtdoc
    conda activate rtdoc
-   pip install mkdocs
+   pip install mkdocs sphinx_rtd_theme 
    
    # cloning using SSH key
    git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git
@@ -26,6 +26,8 @@ The documentation is written in Markdown with the tool https://www.mkdocs.org
 3. run `mkdocs serve` to visualize the modification on your local machine
 
 4. open the URL: http://127.0.0.1:8000/ in your browser
+
+For customization of the theme, please use the documentation https://squidfunk.github.io/mkdocs-material/. All custom parameters are in the file `mkdocs.yml`
 
 
 
