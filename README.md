@@ -1,5 +1,6 @@
 # TopoPyScale_Documentation
-Documentation of the TopoPyScale toolbox
+Documentation of the TopoPyScale toolbox. 
+https://topopyscale.readthedocs.io
 
 *S. Filhol, J. Fiddes*, January 2022
 
