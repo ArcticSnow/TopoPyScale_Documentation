@@ -5,6 +5,7 @@ copyright: GNU GPL3
 nav:
     - Home: index.md
     - Quick Start: quickstart.md
+    - Project Configuration: configFile.md
     - About: about.md
 theme: material
 markdown_extensions:
