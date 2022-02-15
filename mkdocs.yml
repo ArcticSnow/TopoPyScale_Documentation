@@ -4,9 +4,10 @@ site_author: Simon Filhol, Joel Fiddes
 copyright: GNU GPL3
 nav:
     - Home: index.md
+    - Installation: instal.md
     - Quick Start: quickstart.md
     - Project Configuration: configurationFile.md
-    - About: about.md
+    - Datasets: DatasetSources.md
 theme: material
 markdown_extensions:
   - pymdownx.highlight:

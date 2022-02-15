@@ -21,18 +21,26 @@ mp.compute_dem_param()
 
 # ========== STEP 2 ===========
 # Extract DEM parameters for points of interest (centroids or physical points)
+method = 1
 
-# ----- Option 1:
-# Compute clustering of the input DEM and extract cluster centroids
-mp.extract_dem_cluster_param()
-# plot clusters
-mp.toposub.plot_clusters_map()
-# plot sky view factor
-mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
+if method ==1:
+    # ----- Option1: 
+    # here we indicate in the config.yml file which sampling method to use
+    mp.extract_topo_param()
 
-# ------ Option 2:
-# inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)
-mp.extract_pts_param(method='linear',index_col=0)
+elif method == 2:
+    # ----- Option 2:
+    # Compute clustering of the input DEM and extract cluster centroids
+    mp.extract_dem_cluster_param()
+    # plot clusters
+    mp.toposub.plot_clusters_map()
+    # plot sky view factor
+    mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
+
+elif method == 3:
+    # ------ Option 3:
+    # inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)
+    mp.extract_pts_param(method='linear',index_col=0)
 
 # ========= STEP 3 ==========
 # compute solar geometry and horizon angles
