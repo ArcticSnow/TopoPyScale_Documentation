@@ -4,7 +4,7 @@
 
 1. Setup your Python environment
 2. Create your project directory
-3. Configure the file `config.ini` to fit your problem (see [`config.ini`](https://github.com/ArcticSnow/TopoPyScale/blob/main/TopoPyScale/config.ini) for an example)
+3. Configure the file `config.yml` to fit your problem (see [`config.yml`](https://github.com/ArcticSnow/TopoPyScale/blob/main/TopoPyScale/config.yml) for an example)
 4. Run TopoPyScale
 
 ```python
@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 
 # ========= STEP 1 ==========
 # Load Configuration
-config_file = './config.ini'
+config_file = './config.yml'
 mp = tc.Topoclass(config_file)
 # Compute parameters of the DEM (slope, aspect, sky view factor)
 mp.compute_dem_param()
@@ -54,7 +54,7 @@ mp.to_netcdf()
 ```
 
 TopoClass will create a file structure in the project folder (see below). TopoPyScale assumes you have a DEM in GeoTiFF, and a set of climate data in netcdf (following ERA5 variable conventions). 
-TopoPyScale can easier segment the DEM using clustering (e.g. K-mean), or a list of predefined point coordinates in `pts_list.csv` can be provided. Make sure all parameters in `config.ini` are correct.
+TopoPyScale can easier segment the DEM using clustering (e.g. K-mean), or a list of predefined point coordinates in `pts_list.csv` can be provided. Make sure all parameters in `config.yml` are correct.
 ```
 my_project/
     ├── inputs/
@@ -65,5 +65,6 @@ my_project/
             ├── PLEV*.nc
             └── SURF*.nc
     ├── outputs/
-    └── config.ini
+            ├── tmp/
+    └── config.yml
 ```

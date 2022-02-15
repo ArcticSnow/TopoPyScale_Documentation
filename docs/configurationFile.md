@@ -18,7 +18,7 @@ my_project/
     └── config.yml
 ```
 
-## `config.yml` File
+## File `config.yml`
 
 The configuration file contains all parameters needed to run a downscaling work. It includes general information about the job, as well as specific routine and values. Examples of `config.yml` file can be found in the repository[TopoPyScale_examples](https://github.com/ArcticSnow/TopoPyScale_examples).
 
@@ -87,10 +87,11 @@ toposcale:
 
 The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass('config.yml')` is created. As many config files can be created and used to 
 
-## `csv` file format for a list of points
+## File `csv` format for a list of points
 
 The list of points is a comma-separated value file which must contain at least the fields `x,y`. All other columns will be loaded into a dataframe and can be used for further analysis (but won't be used by TopoPyScale).
 
+An example of a list of points:
 ```csv
 Name,stn_number,latitude,longitude,x,y
 Finsevatne,SN25830,60.5938,7.527,419320.867306002,6718447.86246835

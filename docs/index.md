@@ -4,5 +4,6 @@ TopoPyScale is a downscaling method for global and regional climate model datase
 
 **INSERT REF HERE**
 
+If you are here to use TopoPyScale, then head to ()[quickstart]
 ## General Concept
 
