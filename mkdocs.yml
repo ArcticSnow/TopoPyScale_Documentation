@@ -8,6 +8,7 @@ nav:
     - Quick Start: quickstart.md
     - Project Configuration: configurationFile.md
     - Datasets: DatasetSources.md
+    - Models: models.md
 theme: material
 markdown_extensions:
   - pymdownx.highlight:
