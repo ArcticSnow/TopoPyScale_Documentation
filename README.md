@@ -32,3 +32,11 @@ For customization of the theme, please use the documentation https://squidfunk.g
 
 
 
+## Update the API documentation
+
+Run this command from the TopoPyScale virtual environment with correct paths:
+
+```bash
+lazydocs --output-path="path/to/TopoPyScale_Documentation/docs" --overview-file="README.md" --src-base-url="https://github.com/ArcticSnow/TopoPyScale" path/to/TopoPyScale
+```
+

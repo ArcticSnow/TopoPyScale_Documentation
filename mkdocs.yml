@@ -9,6 +9,18 @@ nav:
     - Project Configuration: configurationFile.md
     - Datasets: DatasetSources.md
     - Models: models.md
+    - API:
+        - topoclass: TopoPyScale.topoclass.md
+        - topo_sub: TopoPyScale.topo_sub.md
+        - topo_scale: TopoPyScale.topo_scale.md
+        - solar_geom: TopoPyScale.solar_geom.md
+        - topo_param: TopoPyScale.topo_param.md
+        - fetch_era5: TopoPyScale.fetch_era5.md
+        - fetch_dem: TopoPyScale.fetch_dem.md
+        - meteoutil: TopoPyScale.meteo_util.md
+        - topo_sim: TopoPyScale.topo_sim.md
+
+
 theme: material
 markdown_extensions:
   - pymdownx.highlight:
