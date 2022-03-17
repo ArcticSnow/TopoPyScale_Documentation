@@ -17,8 +17,13 @@ nav:
         - topo_param: TopoPyScale.topo_param.md
         - fetch_era5: TopoPyScale.fetch_era5.md
         - fetch_dem: TopoPyScale.fetch_dem.md
-        - meteoutil: TopoPyScale.meteo_util.md
+        - meteo_util: TopoPyScale.meteo_util.md
         - topo_sim: TopoPyScale.topo_sim.md
+        - topo_export: TopoPyScale.topo_export.md
+        - topo_da: TopoPyScale.topo_da.md
+        - topo_obs: TopoPyScale.topo_obs.md
+        - topo_utils: TopoPyScale.topo_utils.md
+        - topo_compare: TopoPyScale.topo_compare.md
 
 
 theme: material

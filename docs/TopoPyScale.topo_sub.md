@@ -175,7 +175,7 @@ plot_center_clusters(
     ds_param,
     df_centers,
     var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7ff7a0042460>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f6b2d124430>,
     figsize=(14, 10)
 )
 ```
