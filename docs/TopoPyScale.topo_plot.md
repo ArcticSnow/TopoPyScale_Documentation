@@ -8,17 +8,42 @@ Collectio of plotting functions for TopoPyScale S. Filhol, December 2021
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot/plot_unclustered_map#L10"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot/map__terrain#L12"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-## <kbd>function</kbd> `plot_unclustered_map`
+## <kbd>function</kbd> `map__terrain`
 
 ```python
-plot_unclustered_map(
+map__terrain(ds_param, var='elevation', hillshade=True)
+```
+
+Function to plot terrain parameters 
+
+
+
+**Args:**
+  ds_param:  var:  hillshade: 
+
+
+
+**Returns:**
+ 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot/map_unclustered#L49"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `map_unclustered`
+
+```python
+map_unclustered(
     ds_down,
     ds_param,
     time_step=1,
     var='t',
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f6b2cf64a60>
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f34910a9730>,
+    hillshade=True,
+    **kwargs
 )
 ```
 
@@ -28,6 +53,7 @@ Function to plot unclustered downscaled points given that each point corresponds
 
 **Args:**
   ds_down:  ds_param:  time_step:  var:  cmap: 
+ - <b>`**kwargs`</b>:  kwargs to pass to imshow() in dict format. 
 
 
 

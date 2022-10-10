@@ -8,13 +8,12 @@ Functions to export topo_scale output to formats compatible with existing models
 S. Filhol, December 2021 
 
 TODO; 
-- export compressed netcdf ERROR!! syntax is not correct 
 - SPHY forcing (grids) 
 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/compute_scaling_and_offset#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/compute_scaling_and_offset#L21"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `compute_scaling_and_offset`
 
@@ -34,7 +33,37 @@ Compute offset and scale factor for int conversion
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_cryogrid#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_musa#L39"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `to_musa`
+
+```python
+to_musa(
+    ds,
+    df_pts,
+    da_label,
+    fname_met='musa_met.nc',
+    fname_labels='musa_labels.nc',
+    path='outputs/',
+    climate_dataset_name='ERA5',
+    project_authors='S. Filhol'
+)
+```
+
+Function to export to MuSa standard. 
+
+**Args:**
+  ds:  df_pts:  da_labels:  fname:  path: 
+
+
+
+**Returns:**
+  Save downscaled timeseries and toposub cluster mapping 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_cryogrid#L110"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_cryogrid`
 
@@ -46,12 +75,13 @@ to_cryogrid(
     path='outputs/',
     label_map=False,
     da_label=None,
+    snow_partition_method='jennings2018_trivariate',
     climate_dataset_name='ERA5',
     project_author='S. Filhol'
 )
 ```
 
-Function to export TopoPyScale downscaled dataset in a netcdf format compatible for Cryogrid-community model 
+Function to export TopoPyScale downscaled dataset in a netcdf format compatible for Cryogrid-community model. 
 
 
 
@@ -67,12 +97,16 @@ Function to export TopoPyScale downscaled dataset in a netcdf format compatible 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_fsm#L118"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_fsm#L187"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_fsm`
 
 ```python
-to_fsm(ds, fname_format='FSM_pt_*.tx')
+to_fsm(
+    ds,
+    fname_format='FSM_pt_*.tx',
+    snow_partition_method='jennings2018_trivariate'
+)
 ```
 
 Function to export data for FSM. 
@@ -84,6 +118,7 @@ Function to export data for FSM.
  - <b>`ds`</b> (dataset):  downscaled_pts, 
  - <b>`df_pts`</b> (dataframe):  toposub.df_centroids, 
  - <b>`fname_format`</b> (str pattern):  output format of filename 
+ - <b>`snow_partition_method`</b> (str):  snow/rain partitioning method: default 'jennings2018_trivariate' 
 
 format is a text file with the following columns year month  day   hour  SW      LW      Sf         Rf     Ta  RH   Ua    Ps (yyyy) (mm) (dd) (hh)  (W/m2) (W/m2) (kg/m2/s) (kg/m2/s) (K) (RH 0-100) (m/s) (Pa) 
 
@@ -100,7 +135,7 @@ See README.md file from FSM source code for further details
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_micromet_single_station#L165"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_micromet_single_station#L235"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_micromet_single_station`
 
@@ -137,7 +172,7 @@ year   mo   dy    hr     stn_id  easting  northing  elevation   Tair     RH     
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_crocus#L220"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_crocus#L290"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_crocus`
 
@@ -148,7 +183,8 @@ to_crocus(
     fname_format='CROCUS_pt_*.nc',
     scale_precip=1,
     climate_dataset_name='ERA5',
-    project_author='S. Filhol'
+    project_author='S. Filhol',
+    snow_partition_method='jennings2018_trivariate'
 )
 ```
 
@@ -162,6 +198,69 @@ Functiont to export toposcale output to CROCUS netcdf format. Generates one file
  - <b>`df_pts`</b> (dataframe):  with point list info (x,y,elevation,slope,aspect,svf,...) 
  - <b>`fname_format`</b> (str):  filename format. point_id is inserted where * is 
  - <b>`scale_precip`</b> (float):  scaling factor to apply on precipitation. Default is 1 
+ - <b>`climate_dataset_name`</b> (str):  name of original climate dataset. Default 'ERA5', 
+ - <b>`project_author`</b> (str):  name of project author(s) 
+ - <b>`snow_partition_method`</b> (str):  snow/rain partitioning method: default 'jennings2018_trivariate' 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_snowpack#L408"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `to_snowpack`
+
+```python
+to_snowpack(ds, fname_format='smet_pt_*.tx')
+```
+
+Function to export data for snowpack model as smet. https://models.slf.ch/docserver/meteoio/SMET_specifications.pdf 
+
+
+
+**Args:**
+ 
+ - <b>`ds`</b> (dataset):  downscaled_pts, 
+ - <b>`df_pts`</b> (dataframe):  toposub.df_centroids, 
+ - <b>`fname_format`</b> (str pattern):  output format of filename 
+
+format is a text file with the following columns (coulumns can vary) 
+
+SMET 1.1 ASCII [HEADER] station_id       = meteoc1 station_name     = WFJ2 latitude         = 46.829650 longitude        = 9.809328 altitude         = 2539.0 easting          = 780851.861845 northing         = 189232.420554 epsg             = 21781 nodata           = -999 tz               = 0 plot_unit        = time K - m/s ° W/m2 W/m2 kg/m2 - plot_description = time air_temperature relative_humidity wind_velocity wind_direction incoming_short_wave_radiation incoming_long_wave_radiation water_equivalent_precipitation_sum - plot_color       = 0x000000 0x8324A4 0x50CBDB 0x297E24 0x64DD78 0xF9CA25 0xD99521 0x2431A4 0xA0A0A0 plot_min         = -999 253.15 0 0 0 0 150 0 -999 plot_max         = -999 283.15 1 30 360 1400 400 20 -999 fields           = timestamp TA RH VW DW ISWR ILWR PSUM PINT [DATA] 2014-09-01T00:00:00   271.44   1.000    5.9   342     67    304  0.000    0.495 2014-09-01T01:00:00   271.50   0.973    6.7   343    128    300  0.166    0.663 2014-09-01T02:00:00   271.46   0.968    7.4   343    244    286  0.197    0.788 2014-09-01T03:00:00   271.41   0.975    7.6   345    432    273  0.156    0.626 2014-09-01T04:00:00   271.57   0.959    7.8   347    639    249  0.115    0.462 2014-09-01T05:00:00   271.52   0.965    8.2   350    632    261  0.081    0.323 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_geotop#L476"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `to_geotop`
+
+```python
+to_geotop(ds, fname_format='geotop_pt_*.txt')
+```
+
+Function to export data for snowpack model as smet. https://models.slf.ch/docserver/meteoio/SMET_specifications.pdf 
+
+
+
+**Args:**
+ 
+ - <b>`ds`</b> (dataset):  downscaled_pts, 
+ - <b>`df_pts`</b> (dataframe):  toposub.df_centroids, 
+ - <b>`fname_format`</b> (str pattern):  output format of filename 
+
+
+
+Date format = DD/MM/YYYY hh:mm Air temperature = Degree Celsius Relative Humidity = % Radiations components such SWin, SWout, LWin = W/m2 Precipitation = mm/hr Wind speed = m/s Wind direction = degree Air pressure = mbar 
+
+The format of the file is in *.txt format. 
+
+
+
+
+
+format is a text file with the following columns (coulumns can vary) 
+
+Date,AirT,WindS,WindDr,RelHum,Swglob,Swout,Lwin,Lwout,Iprec,AirPressure 01/09/2015 00:00,1.5,0.7,165,59,0,0,223.9,315.5,0,581.02897 01/09/2015 01:00,1.2,0.6,270,59,0,0,261.8,319,0,581.02897 01/09/2015 02:00,0.8,0.5,152,61,0,0,229.9,312.2,0,581.02897 01/09/2015 03:00,0.8,0.5,270,60,0,0,226.1,310.8,0,581.02897 01/09/2015 04:00,0.3,0.8,68,60,0,0,215.3,309.6,0,581.02897 01/09/2015 05:00,0.2,0.6,270,62,0,0,230.2,309.1,0,581.02897 01/09/2015 06:00,0.3,0.6,35,62,0,0,222.8,306.7,0,581.02897 01/09/2015 07:00,-0.2,0.3,270,65,0,0,210,305.5,0,581.02897 01/09/2015 08:00,0,0.6,52,59,114,23,218.3,312.3,0,581.02897 01/09/2015 09:00,1.9,1.5,176,57,173,35,220.2,322.8,0,581.02897 01/09/2015 10:00,3.4,1.9,183,47,331,67,245.8,372.6,0,581.02897 
 
 
 

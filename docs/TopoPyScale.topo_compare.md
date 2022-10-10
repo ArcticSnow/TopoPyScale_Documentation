@@ -3,16 +3,14 @@
 <a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_compare`
-Set of functions to compare toposcale output to meteorological observation 
 
-S. Filhol, December 2021 
 
-1. set of plotting tools 2. set of statistical evaluation (RMSE, Regression, biais, scaling, ... 3. gap filling tools 
+
 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_trend#L16"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_trend#L9"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `correct_trend`
 
@@ -38,7 +36,7 @@ Function to estimate linear trend correction.
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_seasonal#L58"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_seasonal#L51"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `correct_seasonal`
 
@@ -71,7 +69,7 @@ Function to correct for seasonal signal.  1. it groups all days by day_of_year a
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/obs_vs_downscaled#L97"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/obs_vs_downscaled#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `obs_vs_downscaled`
 
@@ -82,7 +80,7 @@ obs_vs_downscaled(
     target_col='dow',
     trend_correction=True,
     seasonal_correction=True,
-    param={'xlab': 'Observation [unit]', 'ylab': 'Downscaled [unit]', 'xlim': (-20, 20), 'ylim': (-20, 20), 'title': None},
+    param={'xlab': 'Downscaled [unit]', 'ylab': 'Observation [unit]', 'xlim': (-20, 20), 'ylim': (-20, 20), 'title': None},
     plot='heatmap'
 )
 ```
@@ -96,7 +94,9 @@ Function to compare Observation to Downscaled for one given variable.
  - <b>`df`</b> (dataframe):  pandas dataframe containing corresponding Observation and Downscaled values 
  - <b>`reference_col`</b> (str):  name of the reference column. Observation 
  - <b>`target_col`</b> (str):  name of the target column. Downscaled timeseries 
- - <b>`param`</b> (dict):  parameter for comaprison and plotting 
+ - <b>`trend_correction`</b> (bool):  remove trend by applying a linear regression 
+ - <b>`seasonal_correction`</b> (bool):  remove seasonal signal by deriving median per day of the year and computing the rolling mean over 31d on the median 
+ - <b>`param`</b> (dict):  parameter for comparison and plotting 
  - <b>`plot`</b> (str):  plot type: heatmap or timeseries 
 
 
@@ -104,6 +104,8 @@ Function to compare Observation to Downscaled for one given variable.
 **Returns:**
  
  - <b>`dict`</b>:  metrics of regression and comparison 
+ - <b>`dataframe`</b>:  dataframe containing the seasonal corrections to applied 
+ - <b>`dataframe`</b>:  corrected values 
 
 Inspired by this study: https://reader.elsevier.com/reader/sd/pii/S0048969722015522?token=106483481240DE6206D83D9C7EC9D4990C2C3DE6F669EDE39DCB54FF7495A31CC57BDCF3370A6CA39D09BE293EACDDBB&originRegion=eu-west-1&originCreation=20220316094240 
 

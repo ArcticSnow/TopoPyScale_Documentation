@@ -13,7 +13,7 @@ Methods to generate required simulation files and run simulations of various mod
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/fsm_nlst#L18"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/fsm_nlst#L19"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `fsm_nlst`
 
@@ -48,7 +48,7 @@ Function to generate namelist parameter file that is required to run the FSM mod
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/fsm_sim#L80"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/fsm_sim#L81"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `fsm_sim`
 
@@ -73,7 +73,7 @@ Function to simulate the FSM model https://github.com/RichardEssery/FSM
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/agg_by_var_fsm#L97"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/agg_by_var_fsm#L98"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `agg_by_var_fsm`
 
@@ -99,7 +99,7 @@ ncol: 4 = rof 5 = hs 6 = swe 7 = gst
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/agg_by_var_fsm_ensemble#L161"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/agg_by_var_fsm_ensemble#L162"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `agg_by_var_fsm_ensemble`
 
@@ -125,7 +125,7 @@ ncol: 4 = rof 5 = hs 6 = swe 7 = gst
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/timeseries_means_period#L239"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/timeseries_means_period#L240"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `timeseries_means_period`
 
@@ -152,12 +152,12 @@ Function to extract results vectors from simulation results. This can be entire 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/topo_map#L270"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/topo_map#L271"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `topo_map`
 
 ```python
-topo_map(df_mean)
+topo_map(df_mean, outname='outputmap.tif')
 ```
 
 Function to map results to toposub clusters generating map results. 
@@ -173,12 +173,12 @@ Here 's an approach for arbitrary reclassification of integer rasters that avoid
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/topo_map_forcing#L313"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/topo_map_forcing#L314"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `topo_map_forcing`
 
 ```python
-topo_map_forcing(ds_var)
+topo_map_forcing(ds_var, round_dp, mydtype, new_res=None)
 ```
 
 Function to map forcing to toposub clusters generating gridded forcings 
@@ -188,6 +188,7 @@ Function to map forcing to toposub clusters generating gridded forcings
 **Args:**
  
  - <b>`ds_var`</b>:  single variable of ds eg. mp.downscaled_pts.t 
+ - <b>`new_res`</b>:  optional parameter to resample output to (in units of projection 
 
 Return: 
  - <b>`grid_stack`</b>:  stack of grids with dimension Time x Y x X 
@@ -197,12 +198,12 @@ Here 's an approach for arbitrary reclassification of integer rasters that avoid
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/write_ncdf#L367"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sim/write_ncdf#L408"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `write_ncdf`
 
 ```python
-write_ncdf(wdir, grid_stack, var, units, longname, mytime)
+write_ncdf(wdir, grid_stack, var, units, longname, mytime, lats, lons, mydtype)
 ```
 
 
