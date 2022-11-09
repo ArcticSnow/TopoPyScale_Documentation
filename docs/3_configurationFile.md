@@ -2,7 +2,7 @@
 
 ## Project Organisation
 
-To run a TopoPyScale project, you need to have this
+To run a TopoPyScale project, you need to have the following file structure:
 
 ```
 my_project/
@@ -22,7 +22,7 @@ my_project/
 
 The configuration file contains all parameters needed to run a downscaling work. It includes general information about the job, as well as specific routine and values. Examples of `config.yml` file can be found in the repository[TopoPyScale_examples](https://github.com/ArcticSnow/TopoPyScale_examples).
 
-The configuration consists of YAML file, which is a common standard for storing configurations. Further help on YAML syntax can be found [here](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html), and the Python packages [pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation) and [Munch](https://pypi.org/project/munch/) allows to interact with such kind of file.
+The configuration consists of a YAML file, which is a common standard for storing configurations. Further help on YAML syntax can be found [here](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html), and the Python packages [pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation) and [Munch](https://pypi.org/project/munch/) allows to interact with such kind of file.
 
 For TopoPyScale, the configuration file must contain at least the sections:
 
@@ -34,49 +34,65 @@ project:
         - Author 1 (can add contact and affiliation here)
         - Author 2
         - Author 3
-    date: Date at which the project is ran
+    date: Date at which the project is ran. This is metadata
     directory: /path/to/project/
 
     # start and end date of the timeperiod of interest
     start: 2018-01-01   
     end: 2018-01-31
 
-    # possibility to provide an extent in the format [latN, latS, lonW, lonE]. If empty then it uses extent of the DEM provided below
-    extent: 
+    # Indicate the number of core to use
     CPU_cores: 4
 
     # indicate which climate data to use. Currently only era5 available (see climate section below)
     climate: era5
 
+#.....................................................................................................
 climate:
 	# For now TopoPyScale only supports ERA5-reanalysis input climate data
     era5:
         path: inputs/climate/
         product: reanalysis
         timestep: 1H
+
+        # Choose pressure levels relevan to your project and evailable in ERA5 Pressure Levels
         plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
+
+        # Number of threads to request downloads with cdsapi
         download_threads: 12
 
+#.....................................................................................................
 dem:
+
+    # Name of the dem file. Must be a raster.
     file: myDEM.tif
+
     # projection EPSG code
     epsg: 32632
+
     # horizon increment angle in degrees
     horizon_increments: 10
 
+#.....................................................................................................
 sampling:
-	# choose downscaling using toposub or a list of points. Possible values: toposub, points
+
+	# choose downscaling using dem segmentation 'toposub' or a list of points 'points'. Possible values: toposub, points
     method: toposub
+
+    # In case method == 'points', indicate a file with a list of points and the point coordinate projection EPSG code
     points:
         csv_file: pt_list.csv
         epsg: 4326
 
+    # In case method == 'toposub'
     toposub:
+
     	# clustering method available: kmean, minibatchkmean
         clustering_method: minibatchkmean
         n_clusters: 50
         random_seed: 2
 
+#.....................................................................................................
 toposcale:
 	# interpolation methods available: linear or idw
     interpolation_method: idw
@@ -85,7 +101,7 @@ toposcale:
     LW_terrain_contribution: True
 ```
 
-The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass('config.yml')` is created. As many config files can be created and used to 
+The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass('config.yml')` is created.
 
 ## File `csv` format for a list of points
 

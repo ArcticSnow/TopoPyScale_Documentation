@@ -4,7 +4,7 @@
 
 1. Setup your Python environment
 2. Create your project directory
-3. Configure the file `config.yml` to fit your problem (see [`config.yml`](https://github.com/ArcticSnow/TopoPyScale/blob/main/TopoPyScale/config.yml) for an example)
+3. Configure the file `config.yml` to fit your problem (see [`config.yml`](./3_configurationFile.md) for an example)
 4. Run TopoPyScale
 
 ```python
@@ -16,31 +16,11 @@ from matplotlib import pyplot as plt
 # Load Configuration
 config_file = './config.yml'
 mp = tc.Topoclass(config_file)
+
+# ======== STEP 2 ===========
 # Compute parameters of the DEM (slope, aspect, sky view factor)
 mp.compute_dem_param()
-
-# ========== STEP 2 ===========
-# Extract DEM parameters for points of interest (centroids or physical points)
-method = 1
-
-if method ==1:
-    # ----- Option1: 
-    # here we indicate in the config.yml file which sampling method to use
-    mp.extract_topo_param()
-
-elif method == 2:
-    # ----- Option 2:
-    # Compute clustering of the input DEM and extract cluster centroids
-    mp.extract_dem_cluster_param()
-    # plot clusters
-    mp.toposub.plot_clusters_map()
-    # plot sky view factor
-    mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
-
-elif method == 3:
-    # ------ Option 3:
-    # inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)
-    mp.extract_pts_param(method='linear',index_col=0)
+mp.extract_topo_param()
 
 # ========= STEP 3 ==========
 # compute solar geometry and horizon angles
@@ -76,3 +56,23 @@ my_project/
             ├── tmp/
     └── config.yml
 ```
+
+## Plotting
+
+TopoPyScale incudes a number of plotting tools:
+```python
+
+# To plot cluster map:
+mp.toposub.plot_clusters_map()
+
+# To plot sky view factor or any other variable
+mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
+```
+
+## Comparison to Observations
+
+TopoPyScale includes tools to fetch weather station observations from public databases:
+- [WMO](https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-observations-surface-land?tab=overview)
+- Norwegian meteoroligical Institue [MetNO FROST API](https://frost.met.no/index.html)
+
+These functions are available into `topo_obs.py`. `topo_compare.py` includes functions to estimate and also correct bias between downscaled and a reference timeseries. 

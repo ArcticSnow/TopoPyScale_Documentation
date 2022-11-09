@@ -1,8 +1,15 @@
 # Installation
 
-## On Unix system
+## Release Installation
+To install the latest release, in a virtual environment simply use `pip`
 
-- [x] tested on Linux
+```bash
+pip install topopyscale
+```
+
+## Development version Installation
+To install the version in development:
+- [x] tested on Linux Ubuntu
 - [ ] tested on MacOS
 
 ```bash
@@ -25,6 +32,8 @@ pip install -e TopoPyScale    #install a development version, remove the -e for 
 # add this new Python kernel to your jupyter lab PATH
 python -m ipykernel install --user --name downscaling
 ```
+
+## Setting up `cdsapi`
 
 Then you need to setup your `cdsapi` with the Copernicus API key system. Follow [this tutorial](https://cds.climate.copernicus.eu/api-how-to#install-the-cds-api-key) after creating an account with [Copernicus](https://cds.climate.copernicus.eu/). On Linux, create a file `nano ~/.cdsapirc` with inside:
 

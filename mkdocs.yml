@@ -4,11 +4,11 @@ site_author: Simon Filhol, Joel Fiddes
 copyright: GNU GPL3
 nav:
     - Home: index.md
-    - Installation: instal.md
-    - Quick Start: quickstart.md
-    - Project Configuration: configurationFile.md
-    - Datasets: DatasetSources.md
-    - Models: models.md
+    - Installation: 1_instal.md
+    - Quick Start: 2_quickstart.md
+    - Project Configuration: 3_configurationFile.md
+    - Datasets: 4_datasetSources.md
+    - Models: 5_models.md
     - API:
         - topoclass: TopoPyScale.topoclass.md
         - topo_sub: TopoPyScale.topo_sub.md
