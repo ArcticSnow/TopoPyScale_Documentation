@@ -72,6 +72,7 @@ mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
 ## Comparison to Observations
 
 TopoPyScale includes tools to fetch weather station observations from public databases:
+
 - [WMO](https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-observations-surface-land?tab=overview)
 - Norwegian meteoroligical Institue [MetNO FROST API](https://frost.met.no/index.html)
 

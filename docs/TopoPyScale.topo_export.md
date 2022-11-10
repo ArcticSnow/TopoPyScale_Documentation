@@ -75,7 +75,7 @@ to_cryogrid(
     path='outputs/',
     label_map=False,
     da_label=None,
-    snow_partition_method='jennings2018_trivariate',
+    snow_partition_method='continuous',
     climate_dataset_name='ERA5',
     project_author='S. Filhol'
 )
@@ -102,11 +102,7 @@ Function to export TopoPyScale downscaled dataset in a netcdf format compatible 
 ## <kbd>function</kbd> `to_fsm`
 
 ```python
-to_fsm(
-    ds,
-    fname_format='FSM_pt_*.tx',
-    snow_partition_method='jennings2018_trivariate'
-)
+to_fsm(ds, fname_format='FSM_pt_*.tx', snow_partition_method='continuous')
 ```
 
 Function to export data for FSM. 
@@ -135,7 +131,7 @@ See README.md file from FSM source code for further details
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_micromet_single_station#L235"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_micromet_single_station#L236"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_micromet_single_station`
 
@@ -172,7 +168,7 @@ year   mo   dy    hr     stn_id  easting  northing  elevation   Tair     RH     
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_crocus#L290"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_crocus#L291"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_crocus`
 
@@ -184,7 +180,7 @@ to_crocus(
     scale_precip=1,
     climate_dataset_name='ERA5',
     project_author='S. Filhol',
-    snow_partition_method='jennings2018_trivariate'
+    snow_partition_method='continuous'
 )
 ```
 
@@ -205,7 +201,7 @@ Functiont to export toposcale output to CROCUS netcdf format. Generates one file
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_snowpack#L408"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_snowpack#L412"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_snowpack`
 
@@ -230,7 +226,7 @@ SMET 1.1 ASCII [HEADER] station_id       = meteoc1 station_name     = WFJ2 latit
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_geotop#L476"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_geotop#L480"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_geotop`
 

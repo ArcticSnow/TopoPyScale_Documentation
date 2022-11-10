@@ -1,5 +1,6 @@
-# Further Models
-TopoPyScale include a number of functionalities to export the downscaled timeseries to be compatible with some established energy and mass balance land-surface models for snow and permafrost physics, or hydrology. All these functions are available into the file `topo_export.py` and are integrated to the clas `topoclass`.
+# Output Formats
+
+TopoPyScale include a number of functions to export the downscaled timeseries to be compatible with some established energy and mass balance land-surface models for snow and permafrost physics, or hydrology. All these functions are available into the file `topo_export.py` and are integrated to the class `topoclass`.
 
 
 ## FSM

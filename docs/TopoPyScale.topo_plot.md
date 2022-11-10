@@ -41,7 +41,7 @@ map_unclustered(
     ds_param,
     time_step=1,
     var='t',
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f34910a9730>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7ffa9a410970>,
     hillshade=True,
     **kwargs
 )

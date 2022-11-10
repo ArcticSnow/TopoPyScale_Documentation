@@ -3,12 +3,12 @@ site_url: https://example.com/
 site_author: Simon Filhol, Joel Fiddes
 copyright: GNU GPL3
 nav:
-    - Home: index.md
+    - Home: 0_index.md
     - Installation: 1_instal.md
     - Quick Start: 2_quickstart.md
     - Project Configuration: 3_configurationFile.md
     - Datasets: 4_datasetSources.md
-    - Models: 5_models.md
+    - Outputs: 5_models.md
     - API:
         - topoclass: TopoPyScale.topoclass.md
         - topo_sub: TopoPyScale.topo_sub.md
@@ -24,6 +24,7 @@ nav:
         - topo_obs: TopoPyScale.topo_obs.md
         - topo_utils: TopoPyScale.topo_utils.md
         - topo_compare: TopoPyScale.topo_compare.md
+        - topo_plot: TopoPyScale.topo_plot.md
 
 
 theme: material

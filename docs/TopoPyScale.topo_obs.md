@@ -8,7 +8,7 @@ Tools to download and compare Downsclaed timeseries to observation All observati
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/get_metno_obs#L12"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/get_metno_obs#L15"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_metno_obs`
 
@@ -39,7 +39,7 @@ List of variable: https://frost.met.no/element table Find out about stations: ht
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/combine_metno_obs_to_xarray#L71"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/combine_metno_obs_to_xarray#L74"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `combine_metno_obs_to_xarray`
 
@@ -61,6 +61,73 @@ Function to convert metno format to usable dataset
 **Returns:**
  
  - <b>`dataset`</b>:  dataset will all data organized in timeseries and station number 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/fetch_WMO_insitu_observations#L92"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `fetch_WMO_insitu_observations`
+
+```python
+fetch_WMO_insitu_observations(
+    year,
+    month,
+    bbox,
+    target_path='./inputs/observations'
+)
+```
+
+Function to download WMO in-situ data from land surface in-situ observations from Copernicus. https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-observations-surface-land?tab=overview 
+
+
+
+**Args:**
+ 
+ - <b>`year`</b> (str or list):  year(s) to download 
+ - <b>`month`</b> (str or list):  month(s) to download 
+ - <b>`bbox`</b> (list):  bonding box in lat-lon [lat_south, lon_west, lat_north, lon_east] 
+ - <b>`target`</b> (str):  filename 
+
+
+
+**Returns:**
+ Store to disk the dataset as zip file 
+
+
+
+**TODO:**
+ 
+    - [x] test function 
+    - [ ] check if can download large extent at once or need multiple requests? 
+    - [x] save data in individual files for each stations. store either as csv or netcdf (better) 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs/parse_WMO_insitu_observations#L164"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `parse_WMO_insitu_observations`
+
+```python
+parse_WMO_insitu_observations(
+    fname=None,
+    file_pattern='inputs/observations/surf*subset_csv*.csv',
+    path='./inputs/observations'
+)
+```
+
+Function to parse WMO files formated from CDS database. parse in single station file 
+
+
+
+**Args:**
+  fname:  file_pattern:  path: 
+
+
+
+**Returns:**
+ 
 
 
 
