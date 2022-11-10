@@ -1,5 +1,11 @@
 # Welcome to TopoPyScale Documentation
 
+
+
+<figure markdown>
+  ![](./logo.png){ width="250" }
+</figure>
+
 TopoPyScale is a downscaling toolbox for global and regional climate model datasets, particularly relevant to mountain ranges, and hillslopes. 
 
 - **Source Code Github Repository**: [https://github.com/ArcticSnow/TopoPyScale](https://github.com/ArcticSnow/TopoPyScale)

@@ -27,8 +27,14 @@ nav:
         - topo_plot: TopoPyScale.topo_plot.md
 
 
-theme: material
+theme:
+  name: material
+  palette:
+    primary: teal
+  logo: logo.png
 markdown_extensions:
+  - md_in_html
+  - attr_list
   - pymdownx.highlight:
       use_pygments: true
       anchor_linenums: true
