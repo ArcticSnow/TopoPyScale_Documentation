@@ -16,9 +16,7 @@ If you are here to use TopoPyScale, then head to the [Quick Start](./2_quickstar
 
 ## General Concept
 
-TopoPyScale uses both climate model/reanalysis data and Digital Elevation Models (DEM) for correcting atmospheric state variables (e.g. temperature, pressure, humidity, *etc*). TopoPyScale provides tools to interpolate and correct such variables to be relevant locally given a topographical context. 
-
-(descirbe why we need the DEM)
+TopoPyScale uses both climate model data and Digital Elevation Models (DEM) for correcting atmospheric state variables (e.g. temperature, pressure, humidity, *etc*). TopoPyScale provides tools to interpolate and correct such variables to be relevant locally given a topographical context. 
 
 The most basic requirements of TopoPyscale is a DEM used to defined the spatial domain of interest as well as compute a number of morphometrics, and configuration file defining the temporal period, the downscaling methods and other parameters. In its current version, TopoPyScale includes the `topoclass` class that wraps all functionalities for ease of use. It automatically fetches data from the [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-pressure-levels?tab=overview) repositories (Pressure and Surface levels). Other climate data sources can be added. Based on the high resolution (30-100m) DEM and the climate data, methods in the `topoclass` will compute, correct and interpolate variables need to force specialized land-surface models.
 
