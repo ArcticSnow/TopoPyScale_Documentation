@@ -3,7 +3,7 @@ site_url: https://example.com/
 site_author: Simon Filhol, Joel Fiddes
 copyright: GNU GPL3
 nav:
-    - Home: 0_index.md
+    - Home: index.md
     - Installation: 1_instal.md
     - Quick Start: 2_quickstart.md
     - Project Configuration: 3_configurationFile.md
