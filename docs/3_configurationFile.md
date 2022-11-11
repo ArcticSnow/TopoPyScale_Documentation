@@ -41,6 +41,9 @@ project:
     start: 2018-01-01   
     end: 2018-01-31
 
+    # This is for the option of fetching DEM with API (NOT YET SUPPORTED)
+    extent:
+
     # Indicate the number of core to use
     CPU_cores: 4
 
@@ -57,21 +60,13 @@ climate:
 
         # Choose pressure levels relevan to your project and evailable in ERA5 Pressure Levels
         plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
-
-        # Number of threads to request downloads with cdsapi
-        download_threads: 12
+        download_threads: 12    # Number of threads to request downloads with cdsapi
 
 #.....................................................................................................
 dem:
-
-    # Name of the dem file. Must be a raster.
-    file: myDEM.tif
-
-    # projection EPSG code
-    epsg: 32632
-
-    # horizon increment angle in degrees
-    horizon_increments: 10
+    file: myDEM.tif                         # Name of the dem file. Must be a raster.
+    epsg: 32632                             # projection EPSG code
+    horizon_increments: 10                  # horizon increment angle in degrees
 
 #.....................................................................................................
 sampling:
@@ -81,24 +76,33 @@ sampling:
 
     # In case method == 'points', indicate a file with a list of points and the point coordinate projection EPSG code
     points:
-        csv_file: pt_list.csv
-        epsg: 4326
+        csv_file: pt_list.csv               # filename of list of points
+        epsg: 4326                          # EPSG code of the points (x,y) coordinates in file
 
     # In case method == 'toposub'
     toposub:
-
-    	# clustering method available: kmean, minibatchkmean
-        clustering_method: minibatchkmean
-        n_clusters: 50
-        random_seed: 2
+        clustering_method: minibatchkmean   # clustering method available: kmean, minibatchkmean
+        n_clusters: 50                      # number of cluster to segment the DEM
+        random_seed: 2                      # random seed for the K-mean clustering 
 
 #.....................................................................................................
 toposcale:
-	# interpolation methods available: linear or idw
-    interpolation_method: idw
+    interpolation_method: idw               # interpolation methods available: linear or idw
     pt_sampling_method: nearest
-    # Turn ON/OFF terrain contribution to longwave
-    LW_terrain_contribution: True
+    LW_terrain_contribution: True           # (bool)    Turn ON/OFF terrain contribution to longwave
+
+#.....................................................................................................
+outputs:
+    variables: all                          # list or combination name
+    file:
+        clean_outputs: False                # (bool)    delete the entire outputs/ directory
+        clean_FSM: True                     # (bool)    delete the entire sim/ directory
+        df_centroids: df_centroids.pck      # (pickle)  dataframe containing the points of interest with their topographic features
+        ds_param: ds_param.nc               # (netcdf)  topographic parameters (slope, aspect, etc.)
+        ds_solar: ds_solar.nc               # (netcdf)  solar geometry
+        da_horizon: da_horizon.nc           # (netcdf)  horizon angles
+        landform: landform.tif              # (geotiff) rasters of of cluster labels, [TopoSub]
+        downscaled_pt: down_pt_*.nc         # (netcdf)  Downscales 
 ```
 
 The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass('config.yml')` is created.

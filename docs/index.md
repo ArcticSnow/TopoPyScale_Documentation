@@ -10,7 +10,7 @@ TopoPyScale is a downscaling toolbox for global and regional climate model datas
 
 - **Source Code Github Repository**: [https://github.com/ArcticSnow/TopoPyScale](https://github.com/ArcticSnow/TopoPyScale)
 - **Examples Repository**: [https://github.com/ArcticSnow/TopoPyScale_examples](https://github.com/ArcticSnow/TopoPyScale_examples)
-- **Documentation Repository**: h[ttps://github.com/ArcticSnow/TopoPyScale_Documentation](ttps://github.com/ArcticSnow/TopoPyScale_Documentation)
+- **Documentation Repository**: [https://github.com/ArcticSnow/TopoPyScale_Documentation](https://github.com/ArcticSnow/TopoPyScale_Documentation)
 
 If you are here to use TopoPyScale, then head to the [Quick Start](./2_quickstart.md) page. Further configuration setup are explained in detail
 
