@@ -58,7 +58,7 @@ climate:
         product: reanalysis
         timestep: 1H
 
-        # Choose pressure levels relevan to your project and evailable in ERA5 Pressure Levels
+        # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
         plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
         download_threads: 12    # Number of threads to request downloads with cdsapi
 
