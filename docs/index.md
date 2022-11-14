@@ -33,11 +33,9 @@ Downscaled variable includes:
 - 2m air humidity
 - 2m air pressure
 - 10m wind speed and direction
-- Surface shortwave incoming radiation
-- Surface longwave incoming radiation
+- Surface incoming shortwave radiation
+- Surface incoming longwave radiation
 - Precipitation (possibility to partition snow and rain)
-
-(insert sketches and diagram to illustrate the principle)
 
 ## Quick Installation
 
@@ -56,10 +54,13 @@ url: https://cds.climate.copernicus.eu/api/v2
 key: {uid}:{api-key}
 ```
 
+## Contribution
+
+We welcome, and are pleased for any new contribution to this downscaling toolbox. So if you have suggestions, correction and addition to the current code, please come join us on [GitHub](https://github.com/ArcticSnow/TopoPyScale) and talk to us via email.
 
 ## Funding and Support
 
-TopoPyScale is currently developed by scientists at:
+TopoPyScale is currently developed by people at:
 
 - [University of Oslo](https://www.mn.uio.no/geo/english/), Norway
 - SLF, Switzerland
