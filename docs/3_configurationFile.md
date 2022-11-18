@@ -40,6 +40,10 @@ project:
     # start and end date of the timeperiod of interest
     start: 2018-01-01   
     end: 2018-01-31
+    split:
+        IO: True        # Flag to split downscaling in time or not
+        time: 1         # number of years to split timeline in
+        space: None     # NOT IMPLEMENTED
 
     # This is for the option of fetching DEM with API (NOT YET SUPPORTED)
     extent:
