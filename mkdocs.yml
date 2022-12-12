@@ -9,6 +9,7 @@ nav:
     - Project Configuration: 3_configurationFile.md
     - Datasets: 4_datasetSources.md
     - Outputs: 5_models.md
+    - Examples: 6_examples.md
     - API:
         - topoclass: TopoPyScale.topoclass.md
         - topo_sub: TopoPyScale.topo_sub.md
