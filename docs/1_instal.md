@@ -4,6 +4,8 @@
 To install the latest release, in a virtual environment simply use `pip`
 
 ```bash
+conda create -n downscaling python=3.8 xarray matplotlib netcdf4 dask scipy rasterio scikit-learn gdal
+conda activate downscaling
 pip install topopyscale
 ```
 
@@ -13,15 +15,9 @@ To install the version in development:
 - [ ] tested on MacOS
 
 ```bash
-conda install mamba -n base -c conda-forge
-mamba create -n downscaling ipython numpy pandas xarray matplotlib netcdf4 ipykernel scikit-learn rasterio gdal pyproj munch
+camba create -n downscaling python=3.8 ipython numpy pandas xarray matplotlib netcdf4 ipykernel scikit-learn rasterio gdal pyproj munch
 conda activate downscaling
-pip install cdsapi
-pip install h5netcdf
-pip install topocalc
-pip install pvlib
-pip install elevation
-pip install lazydocs
+
 
 cd github  # navigate to where you want to clone TopoPyScale
 git clone git@github.com:ArcticSnow/TopoPyScale.git
@@ -31,6 +27,10 @@ pip install -e TopoPyScale    #install a development version, remove the -e for 
 #            OPTIONAL: if using jupyter lab
 # add this new Python kernel to your jupyter lab PATH
 python -m ipykernel install --user --name downscaling
+
+# To be able to compile the documentation locally
+pip install lazydocs
+git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git   
 ```
 
 ## Setting up `cdsapi`
