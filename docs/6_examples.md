@@ -37,7 +37,7 @@ cd ex3_switzerland_davos/
 ## Finse, Norway
 
 ### Site Description
-Finse is located at 1200m above sea level in Southern Norway. The site is is equipped of a large set of instruments for weather, snow, carbon fluxes and others. A full description of instrumentation available on (UiO website)[https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/].This example can be run for specific point (weather station) or in spatialized way (TopoSUB). 
+Finse is located at 1200m above sea level in Southern Norway. The site is is equipped of a large set of instruments for weather, snow, carbon fluxes and others. A full description of instrumentation available on [UiO website](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/).This example can be run for specific point (weather station) or in spatialized way (TopoSUB). 
 
 
 ### How to run the example
