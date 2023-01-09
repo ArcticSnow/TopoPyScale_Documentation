@@ -41,8 +41,8 @@ project:
     start: 2018-01-01   
     end: 2018-01-31
     split:
-        IO: True        # Flag to split downscaling in time or not
-        time: 1         # number of years to split timeline in
+        IO: False       # Flag to split downscaling in time or not
+        time: 2         # number of years to split timeline in
         space: None     # NOT IMPLEMENTED
 
     # This is for the option of fetching DEM with API (NOT YET SUPPORTED)
@@ -65,6 +65,7 @@ climate:
         # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
         plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
         download_threads: 12    # Number of threads to request downloads with cdsapi
+    precip_lapse_rate: True     # Apply precipitation lapse-rate correction (currently valid for Northern Hemisphere only)
 
 #.....................................................................................................
 dem:

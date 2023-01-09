@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_param`
 Set of functions to work with DEMs S. Filhol, Oct 2021 
@@ -14,7 +14,7 @@ Set of functions to work with DEMs S. Filhol, Oct 2021
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param/convert_epsg_pts#L22"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param/convert_epsg_pts#L25"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `convert_epsg_pts`
 
@@ -43,7 +43,7 @@ Simple function to convert a list fo poitn from one projection to another oen us
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param/get_extent_latlon#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param/get_extent_latlon#L45"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_extent_latlon`
 
@@ -69,7 +69,7 @@ Function to extract DEM extent in Lat/Lon
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param/extract_pts_param#L64"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param/extract_pts_param#L67"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `extract_pts_param`
 
@@ -96,12 +96,12 @@ Function to sample DEM parameters for a list point. This is used as an alternati
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param/compute_dem_param#L126"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param/compute_dem_param#L129"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `compute_dem_param`
 
 ```python
-compute_dem_param(dem_file)
+compute_dem_param(dem_file, fname='ds_param.nc', project_directory='./')
 ```
 
 Function to compute and derive DEM parameters: slope, aspect, sky view factor 
@@ -121,12 +121,18 @@ Function to compute and derive DEM parameters: slope, aspect, sky view factor
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_param/compute_horizon#L177"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_param/compute_horizon#L171"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `compute_horizon`
 
 ```python
-compute_horizon(dem_file, azimuth_inc=30, num_threads=None)
+compute_horizon(
+    dem_file,
+    azimuth_inc=30,
+    num_threads=None,
+    fname='da_horizon.nc',
+    project_directory='./'
+)
 ```
 
 Function to compute horizon angles for 

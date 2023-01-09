@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_scale#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_scale`
 Toposcale functionalities 
@@ -40,21 +40,39 @@ down_pt => downscaled data time series (t, u, v, q, LW, SW, tp)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale/downscale_climate#L63"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_scale/clear_files#L63"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `clear_files`
+
+```python
+clear_files(path)
+```
+
+
+
+
+
+
+---
+
+<a href="../docs/TopoPyScale/topo_scale/downscale_climate#L71"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `downscale_climate`
 
 ```python
 downscale_climate(
-    path_forcing,
+    project_directory,
     df_centroids,
     horizon_da,
+    ds_solar,
     target_EPSG,
     start_date,
     end_date,
     interp_method='idw',
     lw_terrain_flag=True,
-    tstep='1H'
+    tstep='1H',
+    precip_lapse_rate_flag=True,
+    file_pattern='down_pt*.nc'
 )
 ```
 
@@ -64,13 +82,14 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 **Args:**
  
- - <b>`path_forcing`</b>:  path to forcing data [SURF*, PLEV*] 
+ - <b>`project_directory`</b>:  path to project root directory 
  - <b>`df_centroids`</b> (dataframe):  containing a list of point for which to downscale (includes all terrain data) 
  - <b>`horizon_da`</b> (dataarray):  horizon angles for a list of azimuth 
  - <b>`target_EPSG`</b> (int):  EPSG code of the DEM 
  - <b>`interp_method`</b> (str):  interpolation method for horizontal interp. 'idw' or 'linear' 
  - <b>`lw_terrain_flag`</b> (bool):  flag to compute contribution of surrounding terrain to LW or ignore 
  - <b>`tstep`</b> (str):  timestep of the input data, default = 1H 
+ - <b>`file_pattern`</b> (str):  filename pattern for storing downscaled points, default = 'down_pt_*.nc' 
 
 
 
@@ -81,7 +100,7 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale/read_downscaled#L340"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_scale/read_downscaled#L376"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `read_downscaled`
 

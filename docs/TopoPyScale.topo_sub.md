@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_sub`
 Clustering routines for TopoSUB 
@@ -17,7 +17,7 @@ S. Filhol, Oct 2021
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/ds_to_indexed_dataframe#L23"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/ds_to_indexed_dataframe#L23"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `ds_to_indexed_dataframe`
 
@@ -43,7 +43,7 @@ By default the ds.to_dataframe() returns a multi-index dataframe. Here the coord
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/scale_df#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/scale_df#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `scale_df`
 
@@ -69,7 +69,7 @@ Function to scale features of a pandas dataframe
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/inverse_scale_df#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/inverse_scale_df#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `inverse_scale_df`
 
@@ -95,7 +95,7 @@ Function to inverse feature scaling of a pandas dataframe
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/kmeans_clustering#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/kmeans_clustering#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `kmeans_clustering`
 
@@ -127,7 +127,7 @@ Function to perform K-mean clustering
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/minibatch_kmeans_clustering#L99"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/minibatch_kmeans_clustering#L99"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `minibatch_kmeans_clustering`
 
@@ -165,7 +165,7 @@ Function to perform mini-batch K-mean clustering
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/plot_center_clusters#L125"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/plot_center_clusters#L127"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `plot_center_clusters`
 
@@ -175,7 +175,7 @@ plot_center_clusters(
     ds_param,
     df_centers,
     var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7ffa9a5dd340>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f9a6248d670>,
     figsize=(14, 10)
 )
 ```
@@ -195,7 +195,7 @@ Function to plot the location of the cluster centroids over the DEM
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/plot_pca_clusters#L154"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/plot_pca_clusters#L156"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `plot_pca_clusters`
 
@@ -217,12 +217,12 @@ plot_pca_clusters(
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/write_landform#L181"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/write_landform#L183"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `write_landform`
 
 ```python
-write_landform(dem_file, df_param)
+write_landform(dem_file, df_param, project_directory='./')
 ```
 
 Function to write a landform file which maps cluster ids to dem pixels 
