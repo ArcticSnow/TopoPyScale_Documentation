@@ -48,12 +48,13 @@ my_project/
     ├── inputs/
         ├── dem/ 
             ├── my_dem.tif
-            └── pts_list.csv  (optional)
+            └── pts_list.csv  (OPTIONAL: to downscale to specific points)
         └── climate/
             ├── PLEV*.nc
             └── SURF*.nc
     ├── outputs/
             ├── tmp/
+    ├── pipeline.py (OPTIONAL: script for the downscaling instructions)
     └── config.yml
 ```
 
@@ -62,7 +63,7 @@ my_project/
 TopoPyScale incudes a number of plotting tools:
 ```python
 
-# To plot cluster map:
+# To plot cluster map in the case clustering was used
 mp.toposub.plot_clusters_map()
 
 # To plot sky view factor or any other variable
@@ -71,7 +72,7 @@ mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
 
 ## Comparison to Observations
 
-TopoPyScale includes tools to fetch weather station observations from public databases:
+`TopoPyScale` includes tools to fetch weather station observations from public databases:
 
 - [WMO](https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-observations-surface-land?tab=overview)
 - Norwegian meteoroligical Institue [MetNO FROST API](https://frost.met.no/index.html)

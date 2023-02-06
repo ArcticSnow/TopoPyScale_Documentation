@@ -6,6 +6,9 @@
 ```bash
 conda create -n downscaling python=3.8 ipython
 conda activate downscaling
+
+# Recomended way to install dependencies:
+conda install -c conda-forge xarray matplotlib scikit-learn pandas numpy netcdf4 h5netcdf rasterio pyproj dask'
 ```
 
 ## Latest Release Installation
@@ -43,7 +46,7 @@ python -m ipykernel install --user --name downscaling
 
 # OPTIONAL: To be able to compile the documentation locally
 pip install lazydocs
-git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git   
+git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git
 ```
 
 
