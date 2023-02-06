@@ -100,7 +100,7 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/read_downscaled#L376"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_scale/read_downscaled#L382"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `read_downscaled`
 

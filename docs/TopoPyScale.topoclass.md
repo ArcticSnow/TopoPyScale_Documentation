@@ -17,12 +17,12 @@ project/  config.ini
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/Topoclass#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/Topoclass#L35"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Topoclass`
 A python class to bring the typical use-case of toposcale in a user friendly object 
 
-<a href="../docs/TopoPyScale/topoclass/__init__#L45"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/__init__#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -39,7 +39,7 @@ __init__(config_file)
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/compute_dem_param#L201"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/compute_dem_param#L196"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `compute_dem_param`
 
@@ -53,7 +53,7 @@ compute_dem_param()
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/compute_horizon#L341"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/compute_horizon#L379"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `compute_horizon`
 
@@ -65,7 +65,7 @@ Function to compute horizon angle and sample values for list of points
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/compute_solar_geometry#L306"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/compute_solar_geometry#L344"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `compute_solar_geometry`
 
@@ -79,7 +79,7 @@ compute_solar_geometry()
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/downscale_climate#L366"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/downscale_climate#L407"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `downscale_climate`
 
@@ -93,7 +93,7 @@ downscale_climate()
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/extract_pts_param#L210"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/extract_pts_param#L237"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `extract_pts_param`
 
@@ -115,7 +115,7 @@ Function to use a list point as input rather than cluster centroids from DEM seg
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/extract_topo_cluster_param#L224"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/extract_topo_cluster_param#L251"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `extract_topo_cluster_param`
 
@@ -131,11 +131,11 @@ Function to segment a DEM in clusters and retain only the centroids of each clus
 
 **TODO:**
  
-- try to migrate most code of this functino to topo_sub.py as a function itself segment_topo() 
+- try to migrate most code of this function to topo_sub.py as a function itself segment_topo() 
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/extract_topo_param#L259"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/extract_topo_param#L297"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `extract_topo_param`
 
@@ -147,7 +147,7 @@ Function to select which
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/get_WMO_observations#L466"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/get_WMO_observations#L507"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get_WMO_observations`
 
@@ -159,7 +159,7 @@ Function to download and parse in-situ data from WMO database
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/get_era5#L431"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/get_era5#L472"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get_era5`
 
@@ -175,7 +175,7 @@ Funtion to call fetching of ERA5 data
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/load_project#L144"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/load_project#L139"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `load_project`
 
@@ -187,7 +187,32 @@ Function to load pre-existing TopoPyScale project saved in files
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_crocus#L517"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/search_optimum_number_of_clusters#L205"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `search_optimum_number_of_clusters`
+
+```python
+search_optimum_number_of_clusters(
+    cluster_range=array([100, 300, 500, 700, 900]),
+    scaler_type=StandardScaler(),
+    plot=True
+)
+```
+
+Function to test what would be an appropriate number of clusters 
+
+**Args:**
+ 
+ - <b>`cluster_range`</b> (int array):  numpy array or list of number of clusters to compute scores. 
+
+
+
+**Returns:**
+ 
+
+---
+
+<a href="../docs/TopoPyScale/topoclass/to_crocus#L561"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_crocus`
 
@@ -206,7 +231,7 @@ function to export toposcale output to crocus format .nc. This functions saves o
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_cryogrid#L486"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_cryogrid#L530"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_cryogrid`
 
@@ -224,7 +249,7 @@ wrapper function to export toposcale output to cryosgrid format from TopoClass
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_fsm#L511"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_fsm#L555"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_fsm`
 
@@ -236,7 +261,7 @@ function to export toposcale output to FSM format
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_geotop#L562"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_geotop#L606"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_geotop`
 
@@ -248,7 +273,7 @@ function to export toposcale output to FSM format
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_musa#L568"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_musa#L612"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_musa`
 
@@ -266,7 +291,7 @@ function to export TopoPyScale output in a format compatible with MuSa MuSa: htt
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_netcdf#L544"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_netcdf#L588"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_netcdf`
 
@@ -285,7 +310,7 @@ function to export toposcale output to one single generic netcdf format, compres
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_snowmodel#L532"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_snowmodel#L576"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_snowmodel`
 
@@ -299,7 +324,7 @@ function to export toposcale output to snowmodel format .ascii, for single stati
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/to_snowpack#L556"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/to_snowpack#L600"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_snowpack`
 
@@ -312,7 +337,7 @@ function to export toposcale output to FSM format
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/Plotting#L590"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/Plotting#L634"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Plotting`
 Sub-Class with plotting functions for topoclass object 
@@ -322,7 +347,7 @@ Sub-Class with plotting functions for topoclass object
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/horizon#L640"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/horizon#L684"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `horizon`
 
@@ -336,14 +361,14 @@ horizon()
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/map_center_clusters#L622"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/map_center_clusters#L666"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `map_center_clusters`
 
 ```python
 map_center_clusters(
     background_var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7f9a6248d670>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f32cba7a160>,
     hillshade=True,
     **kwargs
 )
@@ -355,7 +380,7 @@ map_center_clusters(
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/map_clusters#L629"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/map_clusters#L673"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `map_clusters`
 
@@ -369,7 +394,7 @@ map_clusters(**kwargs)
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/map_terrain#L615"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/map_terrain#L659"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `map_terrain`
 
@@ -383,7 +408,7 @@ map_terrain(var='elevation', hillshade=True, **kwargs)
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/map_variable#L598"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/map_variable#L642"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `map_variable`
 
@@ -392,7 +417,7 @@ map_variable(
     var='t',
     time_step=1,
     time=None,
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f9a6249c9d0>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f32cba80550>,
     hillshade=True,
     **kwargs
 )
@@ -404,7 +429,7 @@ map_variable(
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/solar_geom#L637"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/solar_geom#L681"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `solar_geom`
 
@@ -418,7 +443,7 @@ solar_geom()
 
 ---
 
-<a href="../docs/TopoPyScale/topoclass/timeseries#L634"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topoclass/timeseries#L678"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `timeseries`
 

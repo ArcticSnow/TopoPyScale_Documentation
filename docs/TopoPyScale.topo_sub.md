@@ -17,7 +17,7 @@ S. Filhol, Oct 2021
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/ds_to_indexed_dataframe#L23"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/ds_to_indexed_dataframe#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `ds_to_indexed_dataframe`
 
@@ -43,12 +43,16 @@ By default the ds.to_dataframe() returns a multi-index dataframe. Here the coord
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/scale_df#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/scale_df#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `scale_df`
 
 ```python
-scale_df(df_param, scaler=StandardScaler())
+scale_df(
+    df_param,
+    scaler=StandardScaler(),
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1}
+)
 ```
 
 Function to scale features of a pandas dataframe 
@@ -59,6 +63,7 @@ Function to scale features of a pandas dataframe
  
  - <b>`df_param`</b> (dataframe):  features to scale 
  - <b>`scaler`</b> (scaler object):  Default is StandardScaler() 
+ - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
 
 
 
@@ -69,12 +74,16 @@ Function to scale features of a pandas dataframe
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/inverse_scale_df#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/inverse_scale_df#L65"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `inverse_scale_df`
 
 ```python
-inverse_scale_df(df_scaled, scaler)
+inverse_scale_df(
+    df_scaled,
+    scaler,
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1}
+)
 ```
 
 Function to inverse feature scaling of a pandas dataframe 
@@ -85,6 +94,7 @@ Function to inverse feature scaling of a pandas dataframe
  
  - <b>`df_scaled`</b> (dataframe):  scaled data to transform back to original (inverse transfrom) 
  - <b>`scaler`</b> (scaler object):  original scikit learn scaler 
+ - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
 
 
 
@@ -95,12 +105,18 @@ Function to inverse feature scaling of a pandas dataframe
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/kmeans_clustering#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/kmeans_clustering#L89"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `kmeans_clustering`
 
 ```python
-kmeans_clustering(df_param, n_clusters=100, seed=None, **kwargs)
+kmeans_clustering(
+    df_param,
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
+    n_clusters=100,
+    seed=None,
+    **kwargs
+)
 ```
 
 Function to perform K-mean clustering 
@@ -110,6 +126,7 @@ Function to perform K-mean clustering
 **Args:**
  
  - <b>`df_param`</b> (dataframe):  features 
+ - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
  - <b>`n_clusters`</b> (int):  number of clusters 
  - <b>`seed`</b> (int):  None or int for random seed generator 
 
@@ -127,7 +144,7 @@ Function to perform K-mean clustering
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/minibatch_kmeans_clustering#L99"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/minibatch_kmeans_clustering#L122"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `minibatch_kmeans_clustering`
 
@@ -135,6 +152,7 @@ Function to perform K-mean clustering
 minibatch_kmeans_clustering(
     df_param,
     n_clusters=100,
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
     n_cores=4,
     seed=None,
     **kwargs
@@ -149,6 +167,7 @@ Function to perform mini-batch K-mean clustering
  
  - <b>`df_param`</b> (dataframe):  features 
  - <b>`n_clusters`</b> (int):   number of clusters 
+ - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
  - <b>`n_cores`</b> (int):  number of processor core 
 
 **kwargs:**
@@ -165,7 +184,42 @@ Function to perform mini-batch K-mean clustering
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/plot_center_clusters#L127"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/search_number_of_clusters#L155"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `search_number_of_clusters`
+
+```python
+search_number_of_clusters(
+    df_param,
+    method='minibatchkmean',
+    cluster_range=array([100, 300, 500, 700, 900]),
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
+    scaler_type=StandardScaler(),
+    plot=True
+)
+```
+
+Function to help identify an optimum number of clusters using the elbow method 
+
+**Args:**
+ 
+ - <b>`df_param`</b> (dataframe):  pandas dataframe containing input variable to the clustering method 
+ - <b>`method`</b> (str):  method for clustering. Currently available: ['minibatchkmean', 'kmeans'] 
+ - <b>`range_n_clusters`</b> (array int):  array of number of clusters to derive scores for 
+ - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
+ - <b>`scaler_type`</b> (scikit_learn obj):  type of scaler to use: e.g. StandardScaler() or RobustScaler() 
+ - <b>`plot`</b> (bool):  plot results or not 
+
+
+
+**Returns:**
+ 
+ - <b>`dataframe`</b>:  wcss score, Davies Boulding score, Calinsky Harabasz score 
+
+
+---
+
+<a href="../docs/TopoPyScale/topo_sub/plot_center_clusters#L248"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `plot_center_clusters`
 
@@ -175,7 +229,7 @@ plot_center_clusters(
     ds_param,
     df_centers,
     var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7f9a6248d670>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f32cba7a160>,
     figsize=(14, 10)
 )
 ```
@@ -195,29 +249,7 @@ Function to plot the location of the cluster centroids over the DEM
 
 ---
 
-<a href="../docs/TopoPyScale/topo_sub/plot_pca_clusters#L156"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>function</kbd> `plot_pca_clusters`
-
-```python
-plot_pca_clusters(
-    dem_file,
-    df_param,
-    df_centroids,
-    scaler,
-    n_components,
-    subsample=3
-)
-```
-
-
-
-
-
-
----
-
-<a href="../docs/TopoPyScale/topo_sub/write_landform#L183"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_sub/write_landform#L277"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `write_landform`
 

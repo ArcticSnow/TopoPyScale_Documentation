@@ -8,7 +8,7 @@ Collectio of plotting functions for TopoPyScale S. Filhol, December 2021
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_terrain#L12"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_plot/map_terrain#L11"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_terrain`
 
@@ -17,7 +17,7 @@ map_terrain(
     ds_param,
     var='elevation',
     hillshade=True,
-    cmap=<matplotlib.colors.ListedColormap object at 0x7f9a6248d670>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f32cba7a160>,
     **kwargs
 )
 ```
@@ -37,7 +37,7 @@ Function to plot terrain parameters
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_variable#L50"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_plot/map_variable#L49"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_variable`
 
@@ -49,7 +49,7 @@ map_variable(
     time=None,
     var='t',
     ax=None,
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f9a6249c9d0>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f32cba80550>,
     hillshade=True,
     **kwargs
 )
@@ -79,7 +79,7 @@ Function to plot unclustered downscaled points given that each point corresponds
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_clusters#L100"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_plot/map_clusters#L99"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_clusters`
 

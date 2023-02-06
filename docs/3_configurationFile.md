@@ -89,6 +89,7 @@ sampling:
         clustering_method: minibatchkmean   # clustering method available: kmean, minibatchkmean
         n_clusters: 50                      # number of cluster to segment the DEM
         random_seed: 2                      # random seed for the K-mean clustering 
+        clustering_features: {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1}  # dictionnary of the features of choice to use in clustering with their relative importance. Relative importance is a multiplier after scaling
 
 #.....................................................................................................
 toposcale:

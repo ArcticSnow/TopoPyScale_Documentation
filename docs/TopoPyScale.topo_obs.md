@@ -71,8 +71,8 @@ Function to convert metno format to usable dataset
 
 ```python
 fetch_WMO_insitu_observations(
-    year,
-    month,
+    years,
+    months,
     bbox,
     target_path='./inputs/observations'
 )
@@ -105,7 +105,7 @@ Function to download WMO in-situ data from land surface in-situ observations fro
 
 ---
 
-<a href="../docs/TopoPyScale/topo_obs/parse_WMO_insitu_observations#L164"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../docs/TopoPyScale/topo_obs/parse_WMO_insitu_observations#L163"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `parse_WMO_insitu_observations`
 
