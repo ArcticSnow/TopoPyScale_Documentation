@@ -17,7 +17,7 @@ map_terrain(
     ds_param,
     var='elevation',
     hillshade=True,
-    cmap=<matplotlib.colors.ListedColormap object at 0x7f32cba7a160>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7eff0389c190>,
     **kwargs
 )
 ```
@@ -49,7 +49,7 @@ map_variable(
     time=None,
     var='t',
     ax=None,
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f32cba80550>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7eff038a2580>,
     hillshade=True,
     **kwargs
 )
