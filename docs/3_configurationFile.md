@@ -103,7 +103,7 @@ toposcale:
 
 #.....................................................................................................
 outputs:
-    variables: all                          # list or combination name
+    variables: all                          # list of variables to export in netcdf. ['t','p','SW']. Default None or all
     file:
         clean_outputs: False                # (bool)    delete the entire outputs/ directory prior to downscaling
         clean_FSM: True                     # (bool)    delete the entire sim/ directory
