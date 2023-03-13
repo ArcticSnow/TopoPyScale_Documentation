@@ -17,9 +17,22 @@ If reading the error message does not give you clear pointers to solving the pro
 	- is the config file containing all fields according to the example in the [documentation](https://topopyscale.readthedocs.io/en/latest/3_configurationFile/)? If you observe a field is missing, please let us know about it.
 	- is the DEM  file correct?
 	- are the projection EPSG codes correct?
+	- lastly, check indents are fine as YAML is indent sensitive! 
 
 ## I have improvements suggestions, how can I bring it up?
 Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
+
+## How to load an exhisiting project whithout having to process the downscaling again?
+
+Given you have all outputs file availble in `/outputs`, then you may load all necessary file of a downscaling project as follow:
+
+```python
+from TopoPyScale import topoclass as tc
+
+config_file = './config.yml'
+mp = tc.Topoclass(config_file)
+mp.load_project()
+```
 
 ## How to cite `TopoPyScale`?
 

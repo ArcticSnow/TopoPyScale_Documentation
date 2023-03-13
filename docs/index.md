@@ -1,4 +1,4 @@
-# Welcome to TopoPyScale Documentation
+# Welcome to `TopoPyScale` Documentation
 
 
 
@@ -12,7 +12,7 @@
 - **Examples Repository**: [https://github.com/ArcticSnow/TopoPyScale_examples](https://github.com/ArcticSnow/TopoPyScale_examples)
 - **Documentation Repository**: [https://github.com/ArcticSnow/TopoPyScale_Documentation](https://github.com/ArcticSnow/TopoPyScale_Documentation)
 
-If you are here to use TopoPyScale, then head to the [Quick Start](./2_quickstart.md) page. Further configuration setup are explained in detail
+If you are here to use `TopoPyScale`, then head to the [Quick Start](./2_quickstart.md) page. Further configuration setup are explained in detail
 
 ## General Concept
 
@@ -46,7 +46,7 @@ To install the latest release, in a virtual environment simply use `pip`. It is 
 pip install topopyscale
 ```
 
-As of now, TopoPyScale uses the Copernicus `cdsapi` to download data. For this to work, you will need to setup the Copernicus API key in your system. Follow [this tutorial](https://cds.climate.copernicus.eu/api-how-to#install-the-cds-api-key) after creating an account with Copernicus. 
+As of now, `TopoPyScale` uses the Copernicus `cdsapi` to download data. For this to work, you will need to setup the Copernicus API key in your system. Follow [this tutorial](https://cds.climate.copernicus.eu/api-how-to#install-the-cds-api-key) after creating an account with Copernicus. 
 
 On Linux, create a file nano ~/.cdsapirc with inside:
 ```text
@@ -60,7 +60,7 @@ We welcome, and are pleased for any new contribution to this downscaling toolbox
 
 ## Funding and Support
 
-TopoPyScale is currently developed by people at:
+`TopoPyScale` is currently developed by people at:
 
 - [University of Oslo](https://www.mn.uio.no/geo/english/), Norway
 - SLF, Switzerland

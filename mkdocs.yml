@@ -10,7 +10,7 @@ nav:
     - Datasets: 04_datasetSources.md
     - Outputs: 05_models.md
     - Examples: 06_examples.md
-    - DEM Clustering Methods: 07_topo_sub_methods.md
+    - Clustering Methods: 07_topo_sub_methods.md
     - FAQ: 20_FAQ.md
     - API:
         - topoclass: TopoPyScale.topoclass.md

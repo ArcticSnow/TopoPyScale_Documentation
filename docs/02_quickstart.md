@@ -41,7 +41,7 @@ plt.show()
 mp.to_netcdf()
 ```
 
-TopoClass will create a file structure in the project folder (see below). TopoPyScale assumes you have a DEM in GeoTiFF, and a set of climate data in netcdf (following ERA5 variable conventions). 
+TopoClass will create a file structure in the project folder (see below). `TopoPyScale` assumes you have a DEM in GeoTiFF, and a set of climate data in netcdf (following ERA5 variable conventions). 
 TopoPyScale can easier segment the DEM using clustering (e.g. K-mean), or a list of predefined point coordinates in `pts_list.csv` can be provided. Make sure all parameters in `config.yml` are correct.
 ```
 my_project/
