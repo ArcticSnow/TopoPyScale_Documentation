@@ -41,6 +41,7 @@ mp.load_project()
 
 ## How to cite `TopoPyScale`?
 If you use TopoPyScale in your project, please cite the software and the methods it relies on: 
+
 1. To cite the software, a manuscript is in review in [JOSS](https://joss.theoj.org/papers/91621581b2d0c097495fdd1e58179e87). 
 2. To cite the method on which `TopoPyScale` relies on, we invite you to look at:
 	- Fiddes, J. and Gruber, S.: TopoSCALE v.1.0: downscaling gridded climate data in complex terrain, Geosci. Model Dev., 7, 387–405, https://doi.org/10.5194/gmd-7-387-2014, 2014.
