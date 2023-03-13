@@ -2,7 +2,7 @@
 
 We present here a set of examples given you have a working python environment for `TopoPyScale`. For any of the example hereafter, create a folder in which a given example will be contained. In this folder you will need at the minium, the configuration file (*e.g.*`config.yml`), the Python processing pipeline or JuPyteR notebook. 
 
-**WARNING 1:** the examples require to download the climate data from ERA5 data portal [CDS Copernicus](https://cds.climate.copernicus.eu/). Depending on the amount of data request and the servers' load, it may take up to few days to acquire the complete dataset. To perform the examples, the `cdsapi` credentials must be set as indicated in the [install](./1_instal.md) section. 
+**WARNING 1:** the examples require to download the climate data from ERA5 data portal [CDS Copernicus](https://cds.climate.copernicus.eu/). Depending on the amount of data request and the servers' load, it may take up to few days to acquire the complete dataset. To perform the examples, the `cdsapi` credentials must be set as indicated in the [install](./01_instal.md) section. 
 
 **WARNING 2:** as TopoPyscale can have a large amount of verbose, we recommand running `TopoPyScale` in a simple IPython console.
 

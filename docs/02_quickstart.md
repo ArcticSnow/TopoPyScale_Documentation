@@ -4,7 +4,7 @@
 
 1. Setup your Python environment
 2. Create your project directory
-3. Configure the file `config.yml` to fit your problem (see [`config.yml`](./3_configurationFile.md) for an example)
+3. Configure the file `config.yml` to fit your problem (see [`config.yml`](./03_configurationFile.md) for an example)
 4. Run TopoPyScale
 
 ```python
