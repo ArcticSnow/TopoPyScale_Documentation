@@ -25,9 +25,9 @@ You may also have a look at the github issues currently [open](https://github.co
 
 
 ## I have suggestions of improvements, how can I bring them up?
-Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
+Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. **Note:** you'll need a Github account.
 
-## How to load an existing project whithout having to process the downscaling again?
+## How to load an existing project without having to process the downscaling again?
 
 Given you have all outputs file available in `/outputs`, then, you may load all necessary files of a downscaling project as follow:
 
