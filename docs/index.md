@@ -40,7 +40,7 @@ Downscaled variable includes:
 ## Quick Installation
 
 ### Release Installation
-To install the latest release, in a virtual environment simply use `pip`. It is adviced to first install dependencies using conda. More detailed installation instructions [here](./01_instal.md).
+To install the latest release, in a virtual environment simply use `pip`. It is adviced to first install dependencies using conda. More detailed installation instructions [here](./01_install.md).
 
 ```bash
 pip install topopyscale
