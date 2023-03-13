@@ -22,9 +22,9 @@ If reading the error message does not give you clear pointers to solving the pro
 ## I have improvements suggestions, how can I bring it up?
 Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
 
-## How to load an exhisiting project whithout having to process the downscaling again?
+## How to load an existing project whithout having to process the downscaling again?
 
-Given you have all outputs file availble in `/outputs`, then you may load all necessary file of a downscaling project as follow:
+Given you have all outputs file available in `/outputs`, then, you may load all necessary files of a downscaling project as follow:
 
 ```python
 from TopoPyScale import topoclass as tc
