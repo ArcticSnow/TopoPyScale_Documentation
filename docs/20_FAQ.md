@@ -18,6 +18,9 @@ If reading the error message does not give you clear pointers to solving the pro
 	- is the DEM  file correct?
 	- are the projection EPSG codes correct?
 
+## I have improvements suggestions, how can I bring it up?
+Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
+
 ## How do I cite TopoPyScale?
 
 1. To cite the software itself, a manuscript is in review in [JOSS](https://joss.theoj.org/papers/91621581b2d0c097495fdd1e58179e87). 
