@@ -8,6 +8,8 @@ Clusters are derived using a set of features which are by default: `[x,y,elevati
 clustering_features: {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1}
 ```
 
+If you add new features specific to your project, be aware that all features are standardize using the `scikit-learn` function `StandardScaler()`. Other types of scaler not yet available.
+
 ## Optimize Number of Clusters
 `Topo_sub` includes a method to search for the optimal number of clusters: `search_optimum_number_of_clusters()`. This may be used in the following manner:
 

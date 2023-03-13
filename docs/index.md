@@ -56,7 +56,7 @@ key: {uid}:{api-key}
 
 ## Contribution
 
-We welcome, and are pleased for any new contribution to this downscaling toolbox. So if you have suggestions, correction and addition to the current code, please come join us on [GitHub](https://github.com/ArcticSnow/TopoPyScale) and talk to us via email.
+We welcome, and are pleased for any new contribution to this downscaling toolbox. So if you have suggestions, correction and addition to the current code, please come join us on [GitHub](https://github.com/ArcticSnow/TopoPyScale) and talk to us on the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page.
 
 ## Funding and Support
 

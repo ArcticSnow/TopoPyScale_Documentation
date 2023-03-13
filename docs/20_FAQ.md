@@ -1,8 +1,10 @@
 # FAQ
 
-`TopoPyScale` is a library building on top of a number of advanced Python libraries such as `xarray`, `pandas` *et al.*, and data type such as Digital Elevation models, and climate datasets. In case you never came across these libraries or types of data, we advice you to first get familiarized with their respective concepts. 
+## I am new to Python, how can I use TopoPyScale for my project?
 
-You may also have a look at the github issues currently [open](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue) or [closed](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aissue+is%3Aclosed).
+`TopoPyScale` is a library building on top of a number of advanced Python libraries such as `xarray`, `scikit-learn`, `pandas`, `pyproj` *et al.*, and data types such as Digital Elevation Models, and climate datasets (e.g. rasters and netcdf files, clustering method, interpolation). In case you never came across these libraries or types of data, we advice you to first get familiarized with their respective concepts. 
+
+`TopoPyScale` is designed for facilitating users to downscale climate while enabling a flexible structure for research and further development. We are a team of scientists supporting the development of the project aside to our respective duties. Its evolution is driven by our needs. 
 
 ## I get an `Error` message, why is the example not working?
 
@@ -18,6 +20,9 @@ If reading the error message does not give you clear pointers to solving the pro
 	- is the DEM  file correct?
 	- are the projection EPSG codes correct?
 	- lastly, check indents are fine as YAML is indent sensitive! 
+
+You may also have a look at the github issues currently [open](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue) or [closed](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aissue+is%3Aclosed).
+
 
 ## I have improvements suggestions, how can I bring it up?
 Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
