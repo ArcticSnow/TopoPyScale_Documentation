@@ -1,6 +1,6 @@
 # FAQ
 
-## I am new to Python, how can I use TopoPyScale for my project?
+## I am new to Python, how can I use `TopoPyScale` for my project?
 
 `TopoPyScale` is a library building on top of a number of advanced Python libraries such as `xarray`, `scikit-learn`, `pandas`, `pyproj` *et al.*, and data types such as Digital Elevation Models, and climate datasets (e.g. rasters and netcdf files, clustering method, interpolation). In case you never came across these libraries or types of data, we advice you to first get familiarized with their respective concepts. 
 
@@ -24,7 +24,7 @@ If reading the error message does not give you clear pointers to solving the pro
 You may also have a look at the github issues currently [open](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue) or [closed](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aissue+is%3Aclosed).
 
 
-## I have improvements suggestions, how can I bring it up?
+## I have suggestions of improvements, how can I bring them up?
 Please, meet us on Github on the source code repository. A number of improvements and new features have been [identified](https://github.com/ArcticSnow/TopoPyScale/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+). If your suggestion is not yet within this list, you may either interact via specific [Issues](https://github.com/ArcticSnow/TopoPyScale/issues), or through the [Discussion](https://github.com/ArcticSnow/TopoPyScale/discussions) page. Note: you'll need a Github account.
 
 ## How to load an existing project whithout having to process the downscaling again?
@@ -40,8 +40,8 @@ mp.load_project()
 ```
 
 ## How to cite `TopoPyScale`?
-
-1. To cite the software itself, a manuscript is in review in [JOSS](https://joss.theoj.org/papers/91621581b2d0c097495fdd1e58179e87). 
+If you use TopoPyScale in your project, please cite the software and the methods it relies on: 
+1. To cite the software, a manuscript is in review in [JOSS](https://joss.theoj.org/papers/91621581b2d0c097495fdd1e58179e87). 
 2. To cite the method on which `TopoPyScale` relies on, we invite you to look at:
 	- Fiddes, J. and Gruber, S.: TopoSCALE v.1.0: downscaling gridded climate data in complex terrain, Geosci. Model Dev., 7, 387–405, https://doi.org/10.5194/gmd-7-387-2014, 2014.
 	- Fiddes, J. and Gruber, S.: TopoSUB: a tool for efficient large area numerical modelling in complex topography at sub-grid scales, Geosci. Model Dev., 5, 1245–1257, https://doi.org/10.5194/gmd-5-1245-2012, 2012.
