@@ -125,6 +125,21 @@ This example demonstrate `TopoPyScale` for the area of Davos. It downscales clim
 ### Site Description
 Davos is located in South-Eastern Switzerland. 
 
+### Prerequisites to this example: install [FSM](https://github.com/RichardEssery/FSM/tree/master)
+
+The first step is to compile FSM from the source code (instruction for Linux). For this you'll need gfortran installed.
+```bash
+# if gfortran is not installed
+sudo apt-get install gfortran
+
+# then:
+git clone git@github.com:RichardEssery/FSM.git
+cd FSM
+sh compil.sh 
+cp FSM my/TopoPyScale/projet/
+```
+
+
 ### How to run the example
 
 In an IPython console run the following.
@@ -188,7 +203,7 @@ mp.to_fsm()
 
 # ========= STEP 7 ===========
 # Simulate FSM
-for i in range(mp.config.n_clusters):
+for i in range(mp.config.sampling.toposub.n_clusters):
     nsim = "{:0>2}".format(i)
     sim.fsm_nlst(31, "./outputs/FSM_pt_"+ nsim +".txt", 24)
     sim.fsm_sim("./fsm_sims/nlst_FSM_pt_"+ nsim +".txt", "./FSM")
