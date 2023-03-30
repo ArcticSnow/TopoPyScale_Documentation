@@ -208,13 +208,28 @@ for i in range(mp.config.sampling.toposub.n_clusters):
     sim.fsm_nlst(31, "./outputs/FSM_pt_"+ nsim +".txt", 24)
     sim.fsm_sim("./fsm_sims/nlst_FSM_pt_"+ nsim +".txt", "./FSM")
 
-# extract GST results(7)
-df = sim.agg_by_var_fsm(7)
+# extract GST results(8)
+df = sim.agg_by_var_fsm(8)
 
 # extraxt timeseries average
-df_mean = sim.timeseries_means_period(df, mp.config.start_date, mp.config.end_date)
+df_mean = sim.timeseries_means_period(df, mp.config.project.start, mp.config.project.end)
 
 # map to domain grid
 sim.topo_map(df_mean)
 
 ```
+
+Outputs of FSM simulations are stored in `fsm_sims/`. Columns of the text file are: 
+
+| Column# | Variable | Units  | Description       |
+|---------|----------|--------|-------------------|
+| 0       | year     | years  | Year              |
+| 1       | month    | months | Month of the year |
+| 2       | day      | days   | Day of the month  |
+| 3       | hour     | hours  | Hour of the day   |
+| 4       | alb      | -      | Effective albedo  |
+| 5       | Rof      | kg m<sup>-2</sup> | Cumulated runoff from snow    |
+| 6       | snd      | m      | Average snow depth                       |
+| 7       | SWE      | kg m<sup>-2</sup> | Average snow water equivalent |
+| 8       | Tsf      | &deg;C | Average surface temperature              |
+| 9       | Tsl      | &deg;C | Average soil temperature at 20 cm depth  |
