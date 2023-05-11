@@ -3,6 +3,14 @@
 ## Python Environment Preparation
 `TopoPyScale` is tested for Python 3.9. You may create a new virtual environment using conda prior to installation.
 
+**Option 1:**
+```bash
+wget https://raw.githubusercontent.com/ArcticSnow/TopoPyScale/main/environment.yml
+conda env create -f environment.yml
+rm environment.yml
+```
+
+**Option 2:**
 ```bash
 conda create -n downscaling python=3.9 ipython
 conda activate downscaling
