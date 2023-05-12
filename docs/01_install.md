@@ -41,20 +41,6 @@ key: {uid}:{api-key}
 
 ## Development version Installation
 
-```bash
-
-cd github  # navigate to where you want to clone TopoPyScale
-git clone git@github.com:ArcticSnow/TopoPyScale.git
-pip install -e TopoPyScale    #install a development version, remove the -e for normal install
-
-#----------------------------------------------------------
-#            OPTIONAL: if using jupyter lab
-# add this new Python kernel to your jupyter lab PATH
-python -m ipykernel install --user --name downscaling
-
-# OPTIONAL: To be able to compile the documentation locally
-pip install lazydocs
-git clone git@github.com:ArcticSnow/TopoPyScale_Documentation.git
-```
+Go to [Development page](./08_Development.md)
 
 

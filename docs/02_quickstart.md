@@ -60,7 +60,7 @@ my_project/
 
 ## Plotting
 
-TopoPyScale incudes a number of plotting tools:
+TopoPyScale incudes a number of plotting tools. Some are wrapped in the `topoclass` object:
 ```python
 
 # To plot cluster map in the case clustering was used
@@ -68,6 +68,24 @@ mp.toposub.plot_clusters_map()
 
 # To plot sky view factor or any other variable
 mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
+
+# to plot a map version of a toposub downscaled output
+mp.plot.map_variable()
+```
+
+However, the basic plotting functions are defined within the file [`topo_plot.py`](./TopoPyScale.topo_plot.md). So after having run the downscaling in spatial (`toposub`) mode, run the following:
+```python
+from TopoPyScale import topo_plot as plot
+import matplotlib.pyplot as plt
+
+# to plot one single timetep
+plot.map_variable(mp.downscaled_pts, mp.toposub.ds_param, time_step=100, var='t_surface')
+plt.show()
+
+# to plot the mean air temperature across the entire timeseries
+plot.map_variable(mp.downscaled_pts.t.mean(dim='time').to_dataset(), mp.toposub.ds_param)
+plt.title('Mean Air Temperature')
+plt.show()
 ```
 
 ## Comparison to Observations
