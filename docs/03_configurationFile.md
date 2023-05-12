@@ -121,22 +121,22 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 ### Project
 
 
-| Field       | Example Value                            | Required                     | Possible Values | Description                                                  |
-| ----------- | ---------------------------------------- | ---------------------------- | --------------- | ------------------------------------------------------------ |
-| name        | Finse                                    | yes                          | string          | metadata: Name of the project                                |
-| description | Downscaling for Finse                    | yes                          | string          | metadata: Description of the project                         |
-| authors     |                                          | yes                          | list of strings | metadata: name of downscaling authors                        |
-| date        | Nov 2021                                 | yes                          | string          | metadata: creation date of the downscaling                   |
-| directory   | ./TopoPyScale_examples/ex1_norway_finse/ | no                           | string          | path where the downscaling project is located. If empty, default will be python current working directory |
-| start       | 2018-10-01                               | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
-| end         | 2018-12-31                               | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
-| **split**   |                                          |                              |                 |                                                              |
-| IO          | False                                    | yes                          | True, False     | Use True to split in time the downscaling project in case of long timeseries. This is decrease memory usage. |
-| time        | 1                                        | only if `split.IO` is `True` |                 | Number of years to chunck climate data timeseries            |
-| space       | None                                     | no                           |                 | not yet implemented                                          |
-| extent      | None                                     | no                           |                 | not yet implemented                                          |
-| CPU_cores   | 4                                        | yes                          | integer         | Number of cores to use                                       |
-| climate     | era5                                     | yes                          | era5            | source of climate data. ERA5 is the only supported dataset at the moment |
+| Field       | Example Value         | Required                     | Possible Values | Description                                                  |
+| ----------- | --------------------- | ---------------------------- | --------------- | ------------------------------------------------------------ |
+| name        | Finse                 | yes                          | string          | metadata: Name of the project                                |
+| description | Downscaling for Finse | yes                          | string          | metadata: Description of the project                         |
+| authors     |                       | yes                          | list of strings | metadata: name of downscaling authors                        |
+| date        | Nov 2021              | yes                          | string          | metadata: creation date of the downscaling                   |
+| directory   | ./path_to_my_project/ | no                           | string          | path where the downscaling project is located. If empty, default will be python current working directory |
+| start       | 2018-10-01            | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
+| end         | 2018-12-31            | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
+| **split**   |                       |                              |                 |                                                              |
+| IO          | False                 | yes                          | True, False     | Use True to split in time the downscaling project in case of long timeseries. This is decrease memory usage. |
+| time        | 1                     | only if `split.IO` is `True` |                 | Number of years to chunck climate data timeseries            |
+| space       | None                  | no                           |                 | not yet implemented                                          |
+| extent      | None                  | no                           |                 | not yet implemented                                          |
+| CPU_cores   | 4                     | yes                          | integer         | Number of cores to use                                       |
+| climate     | era5                  | yes                          | era5            | source of climate data. ERA5 is the only supported dataset at the moment |
 
 ### Climate
 
@@ -191,12 +191,12 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | **file**      |                  |          |                 |                                                              |
 | clean_outputs | True             | yes      | True, False     | remove all files from `/outputs/` folder prior to downscaling. If `False` all files in `outputs/` are kept, but `outputs/tmp/` is removed. `False` can be used to speed up job if computing DEM morphometrics, solar geometries, and horizons have been done. |
 | clean_FSM     | True             | yes      | True, False     | remove all files from `/fsm_sims/` folder prior to downscaling and running FSM. If false, existing files will not be deleted. |
-| df_centroids  | df_centroids.pck | yes      | *.pck           | filename to store dataframe of the points/centroids downscaling takes place . File is saved in `outputs/` |
-| ds_param      | ds_param.nc      | yes      | *.nc            | filename to store dataset of the DEM morphometric and cluster/centroid labels map. File is saved in `outputs/` |
-| ds_solar      | ds_solar.nc      | yes      | *.nc            | filename to store dataset of the solar geometry of DEM. File is saved in `outputs/` |
-| da_horizon    | da_horizon.nc    | yes      | *.nc            | filename to store DataArray of the DEM horizons. File is saved in `outputs/` |
-| landform      | landform.tif     | no       | *.tif           | filename to store dataframe of the points/centroids downscaling takes place . File is saved in `outputs/` |
-| downscaled_pt | down_pt_*.nc     | yes      | *.nc            | filename to store dataset of the dowsncaled points/centroids. File is saved in `outputs/` |
+| df_centroids  | df_centroids.pck | yes      | `*.pck`         | filename to store dataframe of the points/centroids downscaling takes place . File is saved in `outputs/` |
+| ds_param      | ds_param.nc      | yes      | `*.nc`          | filename to store dataset of the DEM morphometric and cluster/centroid labels map. File is saved in `outputs/` |
+| ds_solar      | ds_solar.nc      | yes      | `*.nc`          | filename to store dataset of the solar geometry of DEM. File is saved in `outputs/` |
+| da_horizon    | da_horizon.nc    | yes      | `*.nc`          | filename to store DataArray of the DEM horizons. File is saved in `outputs/` |
+| landform      | landform.tif     | no       | `*.tif`         | filename to store raster of the points/centroids downscaling map. File is saved in `outputs/` |
+| downscaled_pt | down_pt_*.nc     | yes      | `*.nc`          | filename to store dataset of the dowsncaled points/centroids. File is saved in `outputs/` |
 
 ## File `csv` format for a list of points
 
