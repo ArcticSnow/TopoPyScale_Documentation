@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="../docs/TopoPyScale/fetch_era5#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.fetch_era5`
 Retrieve ecmwf data with cdsapi. 
@@ -12,7 +12,7 @@ Retrieve ecmwf data with cdsapi.
 
 ---
 
-<a href="../docs/TopoPyScale/fetch_era5/retrieve_era5#L17"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L18"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `retrieve_era5`
 
@@ -29,7 +29,8 @@ retrieve_era5(
     step,
     num_threads=10,
     surf_plev='surf',
-    plevels=None
+    plevels=None,
+    realtime=False
 )
 ```
 
@@ -57,7 +58,7 @@ Sets up era5 surface retrieval. * Creates list of year/month pairs to iterate th
 
 ---
 
-<a href="../docs/TopoPyScale/fetch_era5/era5_request_surf#L120"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L131"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `era5_request_surf`
 
@@ -87,7 +88,7 @@ CDS surface api call
 
 ---
 
-<a href="../docs/TopoPyScale/fetch_era5/era5_request_plev#L167"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L178"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `era5_request_plev`
 
@@ -114,6 +115,51 @@ CDS plevel api call
 
 **Returns:**
  Store to disk dataset as indicated 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L229"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `era5_realtime_surf`
+
+```python
+era5_realtime_surf(eraDir, dataset, bbox, product)
+```
+
+
+
+
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L252"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `era5_realtime_plev`
+
+```python
+era5_realtime_plev(eraDir, dataset, bbox, product, plevels)
+```
+
+
+
+
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L276"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `return_latest_date`
+
+```python
+return_latest_date()
+```
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="../docs/TopoPyScale/topo_plot#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_plot`
 Collectio of plotting functions for TopoPyScale S. Filhol, December 2021 
@@ -8,7 +8,7 @@ Collectio of plotting functions for TopoPyScale S. Filhol, December 2021
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_terrain#L11"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot.py#L12"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_terrain`
 
@@ -17,7 +17,7 @@ map_terrain(
     ds_param,
     var='elevation',
     hillshade=True,
-    cmap=<matplotlib.colors.ListedColormap object at 0x7eff0389c190>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7fda66251160>,
     **kwargs
 )
 ```
@@ -37,7 +37,7 @@ Function to plot terrain parameters
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_variable#L49"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot.py#L50"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_variable`
 
@@ -45,11 +45,11 @@ Function to plot terrain parameters
 map_variable(
     ds_down,
     ds_param,
-    time_step=1,
+    time_step=None,
     time=None,
-    var='t',
+    var=None,
     ax=None,
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7eff038a2580>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7fda66257550>,
     hillshade=True,
     **kwargs
 )
@@ -61,11 +61,11 @@ Function to plot unclustered downscaled points given that each point corresponds
 
 **Args:**
  
- - <b>`ds_down`</b> (dataset):  TopoPyScale downscaled point object with coordinates (time, point_id) 
+ - <b>`ds_down`</b> (dataset):  TopoPyScale downscaled point object with coordinates (time, point_id). Can be single variable or multiple 
  - <b>`ds_param`</b> (dataset):  TopoPyScale toposub dataset with coordinates (x,y) 
  - <b>`time_step`</b> (int):  (optional) time step to plot. 
  - <b>`time`</b> (str):  (optional) time slice to plot. time overule time_step 
- - <b>`var`</b> (str):  variable from ds_down to plot. e.g. 't' for temperature 
+ - <b>`var`</b> (str):  variable from ds_down to plot. e.g. 't' for temperature if ds_down has more than one variable 
  - <b>`cmap`</b> (obj):  pyplot colormap object 
  - <b>`hillshade`</b> (bool):  add terrain hillshade in background 
  - <b>`**kwargs`</b>:  kwargs to pass to imshow() in dict format. 
@@ -79,7 +79,7 @@ Function to plot unclustered downscaled points given that each point corresponds
 
 ---
 
-<a href="../docs/TopoPyScale/topo_plot/map_clusters#L99"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_plot.py#L109"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `map_clusters`
 

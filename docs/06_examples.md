@@ -1,14 +1,16 @@
 # Examples
 
-We present here a set of examples given you have a working python environment for `TopoPyScale`. For any of the example hereafter, create a folder in which a given example will be contained. In this folder you will need at the minium, the configuration file (*e.g.*`config.yml`), the Python processing pipeline or JuPyteR notebook. 
+We present here a set of three downscaling project examples: 1) Finse Norway, 2) Retezat, Romania, and 3) Davos, Switzerland. Jupyter Notebook are available for Example 1: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArcticSnow/TopoPyScale_examples/HEAD). The two other examples will require your own Python VE setup. 
+
+Each example contains the basic required `config.yml` file and its associated Python pipeline script to perform a downscaling. They perform various task to examplify some of the capabilities of `TopoPyscale`.  
 
 **WARNING 1:** the examples require to download the climate data from ERA5 data portal [CDS Copernicus](https://cds.climate.copernicus.eu/). Depending on the amount of data request and the servers' load, it may take up to few days to acquire the complete dataset. To perform the examples, the `cdsapi` credentials must be set as indicated in the [install](./01_instal.md) section. 
 
-**WARNING 2:** as TopoPyscale can have a large amount of verbose, we recommand running `TopoPyScale` in a simple IPython console.
+**WARNING 2:** as TopoPyscale can have a large amount of verbose output for large projects, we recommand running `TopoPyScale` in a simple IPython console.
 
 ## Getting the Example Material
 
-To run the examples you will need to download the project materials (about 32MB) containing the Digital Elevation models for each example as well as the configuration files. Those are available on Github as a [specific repository](https://github.com/ArcticSnow/TopoPyScale_examples) and is likely to evolve in the future alongside to the main [TopoPyScale](https://github.com/ArcticSnow/TopoPyScale) repository.
+To run the examples you will need to download the project materials (about 32MB) containing the Digital Elevation models for each example as well as the configuration files. Those are available on Github as a dedicated [repository](https://github.com/ArcticSnow/TopoPyScale_examples) and is likely to evolve in the future alongside to the main [TopoPyScale](https://github.com/ArcticSnow/TopoPyScale) repository.
 
 **Option 1:**
 ```bash
@@ -42,6 +44,10 @@ Finse is located at 1200m above sea level in Southern Norway. The site is is equ
 
 ### How to run the example
 
+**Online Binder Notebook**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArcticSnow/TopoPyScale_examples/HEAD)
+
+**Otherwise run locally:**
+
 1. Open an iPython console for the VE in which `TopoPyScale` is installed
 2. run the following commands in the console. This will initialize a `topoclass` object and download (if necessary) the climate data. **WARNING** this may take many hours during which the console must be active. You may use `screen` for run the console in the background.
 ```python
@@ -57,7 +63,7 @@ mp.extract_topo_param()
 mp.compute_solar_geometry()
 mp.compute_horizon()
 ```
-4. Execute the downscaling and store to file in a format compatible with [`Cryogrid-Community`](https://github.com/CryoGrid/CryoGridCommunity_source) model.
+4. Execute the downscaling and store to file in a format compatible with [`Cryogrid-Community`](https://github.com/CryoGrid/CryoGridCommunity_source) model or [Cryogrid.jl](https://github.com/CryoGrid/CryoGrid.jl).
 ```python
 mp.downscale_climate()
 mp.to_cryogrid()
@@ -113,14 +119,11 @@ mp.compute_horizon()
 
 # Downscaling routine
 mp.downscale_climate()
-
-# Export in Cryogrid format
-mp.to_cryogrid()
 ```
 
 ## Davos, Switzerland
 
-This example demonstrate `TopoPyScale` for the area of Davos. It downscales climate, and perform simulation with the snow model FSM. 
+This example demonstrate `TopoPyScale` for the area of Davos. It downscales climate, and performs simulation with the snow model [FSM](https://github.com/RichardEssery/FSM/tree/master). 
 
 ### Site Description
 Davos is located in South-Eastern Switzerland. 
@@ -150,14 +153,6 @@ from matplotlib import pyplot as plt
 from TopoPyScale import topo_sim as sim
 
 
-
-# download era5 (should read the ini to supply parameters. Area from a DEM or polygon?
-# sparse points method?
-#era5.retrieve_era5(product="reanalysis", startDate="2020-01-01", endDate="2020-01-31", eraDir="/home/joel/sim/topoPyscale_paiku/inputs/climate/",latN=29.375, latS=28.125, lonW=85.125, lonE=86.375, step=1, num_threads=10, surf_plev='surf', plevels=None)
-#plev=[600, 650, 700, 750, 775, 800, 825, 850, 875, 900, 925, 950, 975, 1000 ]
-#era5.retrieve_era5(product="reanalysis", startDate="2020-01-01", endDate="2020-01-31", eraDir="/home/joel/sim/topoPyscale_paiku/inputs/climate/",latN=29.375, latS=28.125, lonW=85.125, lonE=86.375, step=1, num_threads=10, surf_plev='plev', plevels=plev)
-
-
 # ========= STEP 1 ==========
 # Load Configuration
 config_file = './config.ini'
@@ -175,12 +170,9 @@ mp.extract_topo_param()
 # plot clusters
 mp.toposub.plot_clusters_map()
 mp.toposub.write_landform()
+
 # plot sky view factor
 # mp.toposub.plot_clusters_map(var='svf', cmap=plt.cm.viridis)
-
-# ------ Option 2:
-# inidicate in the config file the .csv file containing a list of point coordinates (!!! must same coordinate system as DEM !!!)
-# mp.extract_pts_param(method='linear',index_col=0)
 
 # ========= STEP 3 ==========
 # compute solar geometry and horizon angles
@@ -192,16 +184,11 @@ mp.compute_horizon()
 mp.downscale_climate()
 
 # ========= STEP 5 ==========
-# explore the downscaled dataset. For instance the temperature difference between each point and the first one
-#(mp.downscaled_pts.t-mp.downscaled_pts.t.isel(point_id=0)).plot()
-#plt.show()
-
-# ========= STEP 6 ==========
 # Export output to desired format
 # mp.to_netcdf()
 mp.to_fsm()
 
-# ========= STEP 7 ===========
+# ========= STEP 6 ===========
 # Simulate FSM
 for i in range(mp.config.sampling.toposub.n_clusters):
     nsim = "{:0>2}".format(i)

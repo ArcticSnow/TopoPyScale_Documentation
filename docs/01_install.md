@@ -3,12 +3,13 @@
 ## Python Environment Preparation
 `TopoPyScale` is tested for Python 3.9. You may create a new virtual environment using conda prior to installation.
 
-**Option 1:**
+**Option 1 (recommended):**
 ```bash
 wget https://raw.githubusercontent.com/ArcticSnow/TopoPyScale/main/environment.yml
 conda env create -f environment.yml
 rm environment.yml
 ```
+We recommend this option as it will install an environment with librarie versions compatible with the latest release.
 
 **Option 2:**
 ```bash
@@ -18,6 +19,7 @@ conda activate downscaling
 # Recomended way to install dependencies:
 conda install -c conda-forge xarray matplotlib scikit-learn pandas numpy netcdf4 h5netcdf rasterio pyproj dask
 ```
+WARNING: in case dependencies have been updated, there might be incompatibilities. 
 
 ## Latest Release Installation
 

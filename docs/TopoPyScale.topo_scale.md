@@ -1,17 +1,13 @@
 <!-- markdownlint-disable -->
 
-<a href="../docs/TopoPyScale/topo_scale#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_scale`
-Toposcale functionalities 
-
-S. Filhol, Oct 2021 
+Toposcale functionalities S. Filhol, Oct 2021 
 
 ======= Organization of input data to Toposcale ====== dem_description (nb_points)  X  Y,  elev,  slope,  aspect,  svf,  x_ERA,  y_ERA,  elev_ERA, 
 
 horizon_angles (nb_points * bins) solar_geom (nb_points * time * 2) surface_climate_data (spatial + time + var) plevels_climate_data (spatial + time + var + plevel) 
-
-
 
 ======= Dataset naming convention:  ========= ds_surf => dataset direct from ERA5 single level surface ds_plev => dataset direct from ERA5 pressure levels 
 
@@ -23,16 +19,6 @@ top => closest pressure level above the point (lat,lon,elev) for each timesep bo
 
 down_pt => downscaled data time series (t, u, v, q, LW, SW, tp) 
 
-
-
-**TODO:**
- 
-- check that transformation from r,t to q for plevels is working fine 
-- add metadata to all newly created variables in datasets ds_psurf, ds_plevel, down_pt 
-- upscale method for all points in df_centroids: 
-    - method (1) simply using a for loop over each row 
-    - method (2) concatenate 3*3 grid along an additional dimension to process all points in one go. 
-
 **Global Variables**
 ---------------
 - **g**
@@ -40,7 +26,7 @@ down_pt => downscaled data time series (t, u, v, q, LW, SW, tp)
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/multicore_pooling#L64"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L55"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `multicore_pooling`
 
@@ -59,7 +45,7 @@ Function to perform multiprocessing on n_cores
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/multithread_pooling#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L81"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `multithread_pooling`
 
@@ -78,7 +64,7 @@ Function to perform multiprocessing on n_threads
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/clear_files#L96"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L95"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `clear_files`
 
@@ -93,7 +79,7 @@ clear_files(path)
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/downscale_climate#L105"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L104"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `downscale_climate`
 
@@ -140,7 +126,7 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 ---
 
-<a href="../docs/TopoPyScale/topo_scale/read_downscaled#L461"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L501"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `read_downscaled`
 

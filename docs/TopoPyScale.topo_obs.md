@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 
-<a href="../docs/TopoPyScale/topo_obs#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `TopoPyScale.topo_obs`
 Tools to download and compare Downsclaed timeseries to observation All observation in folder inputs/obs/ S. Filhol December 2021 
@@ -8,7 +8,7 @@ Tools to download and compare Downsclaed timeseries to observation All observati
 
 ---
 
-<a href="../docs/TopoPyScale/topo_obs/get_metno_obs#L15"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs.py#L15"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_metno_obs`
 
@@ -39,7 +39,7 @@ List of variable: https://frost.met.no/element table Find out about stations: ht
 
 ---
 
-<a href="../docs/TopoPyScale/topo_obs/combine_metno_obs_to_xarray#L74"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs.py#L74"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `combine_metno_obs_to_xarray`
 
@@ -65,7 +65,7 @@ Function to convert metno format to usable dataset
 
 ---
 
-<a href="../docs/TopoPyScale/topo_obs/fetch_WMO_insitu_observations#L92"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs.py#L92"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `fetch_WMO_insitu_observations`
 
@@ -105,7 +105,7 @@ Function to download WMO in-situ data from land surface in-situ observations fro
 
 ---
 
-<a href="../docs/TopoPyScale/topo_obs/parse_WMO_insitu_observations#L163"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_obs.py#L163"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `parse_WMO_insitu_observations`
 

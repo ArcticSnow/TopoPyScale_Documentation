@@ -129,7 +129,7 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | date        | Nov 2021              | yes                          | string          | metadata: creation date of the downscaling                   |
 | directory   | ./path_to_my_project/ | no                           | string          | path where the downscaling project is located. If empty, default will be python current working directory |
 | start       | 2018-10-01            | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
-| end         | 2018-12-31            | yes                          | %Y-%m-%d        | start date of the downscaling. Currently must date available in ERA5 dataset |
+| end         | 2018-12-31            | yes                          | %Y-%m-%d        | end date of the downscaling. Currently must date available in ERA5 dataset. FYI, `TopoPyScale` downsloads ERA5 data monthly. |
 | **split**   |                       |                              |                 |                                                              |
 | IO          | False                 | yes                          | True, False     | Use True to split in time the downscaling project in case of long timeseries. This is decrease memory usage. |
 | time        | 1                     | only if `split.IO` is `True` |                 | Number of years to chunck climate data timeseries            |
@@ -145,7 +145,7 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | ----------------- | ------------------ | -------- | --------------- | ------------------------------------------------------------ |
 | **era5**          |                    |          |                 | As of now TopoPyScale only supports ERA5 data                |
 | path              | inputs/climate/    | y        | string          | path to store climate data                                   |
-| product           | reanalysis         | n        |                 |                                                              |
+| product           | reanalysis         | y        | reanalysis      | no other product available at the moment.                    |
 | timestep          | 1H                 | y        | 1H              | timestep to run TopoPyScale. Currently only 1H available     |
 | plevels           | [700,800,900,1000] | y        | array           | Indicate ERA5 pressure level to use. The lower pressure level must be higher than the highest elevation of the DEM |
 | download_threads  | 12                 | y        | integer         | Number of downloading threads to use with cdsapi             |
@@ -173,7 +173,7 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | clustering_method   | minibatchkmean                                               | only if method is `toposub` | kmean, minibatchkmean                   | clustering method. minibatchkmean is parallelized and lot faster. See scikit-learn documentation. |
 | n_clusters          | 10                                                           | only if method is `toposub` | integer                                 | number of cluster k-mean will segement DEM by                |
 | random_seed         | 2                                                            | only if method is `toposub` | integer                                 | random seed to use in k-mean                                 |
-| clustering_features | {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1} | only if method is `toposub` | python dict: {feature_name: importance} | Python dictionnary that list which features the clustering must be done with. Importance value is a scaling factor applied to specific feature in case one feature may be more important for segmenting the DEM. Default should be 1. |
+| clustering_features | {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1} | only if method is `toposub` | python dict: {feature_name: importance} | Python dictionary that list which features the clustering must be done with. Importance value is a scaling factor applied to specific feature in case one feature may be more important for segmenting the DEM. Default should be 1. |
 
 ### Toposcale
 
