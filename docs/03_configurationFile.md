@@ -161,6 +161,7 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | timestep          | 1H                 | y        | 1H              | timestep to run TopoPyScale. Currently only 1H available                                                           |
 | plevels           | [700,800,900,1000] | y        | array           | Indicate ERA5 pressure level to use. The lower pressure level must be higher than the highest elevation of the DEM |
 | download_threads  | 12                 | y        | integer         | Number of downloading threads to use with cdsapi                                                                   |
+| realtime          | False              | n        | True, False     | Upon each new run of code redownloads latest month (ERA5T) to obtain daily updates of partial months.              |
 | precip_lapse_rate | True               | y        | True, False     | Apply precipitation lapse rate                                                                                     |
 
 ### dem
