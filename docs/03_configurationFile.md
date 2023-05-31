@@ -76,7 +76,7 @@ climate:
         # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
         plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
         download_threads: 12    # Number of threads to request downloads with cdsapi
-	realtime: False # (Optional) Forces redownload of latest month of ERA5 data upon each run of code (allows daily updates for realtime applications)
+        realtime: False    # (Optional) Forces redownload of latest month of ERA5 data upon each run of code (allows daily updates for realtime applications)
     precip_lapse_rate: True     # Apply precipitation lapse-rate correction (currently valid for Northern Hemisphere only)
 
 #.....................................................................................................
