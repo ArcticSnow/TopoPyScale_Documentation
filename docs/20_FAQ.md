@@ -43,8 +43,7 @@ mp.load_project()
 If you use `TopoPyScale` in your project, please cite the software and the methods it relies on. We're a team of scientists volunteering in developing the toolbox. We're glad you found value in the tool we are building. 
 
 1. To cite the software, 
-
-- Filhol S., Fiddes J., Aalstad K., (2023). TopoPyScale: A Python Package for Hillslope Climate Downscaling. Journal of Open Source Software, 8(86), 5059, (https://doi.org/10.21105/joss.05059)[https://doi.org/10.21105/joss.05059]
+    - Filhol S., Fiddes J., Aalstad K., (2023). TopoPyScale: A Python Package for Hillslope Climate Downscaling. Journal of Open Source Software, 8(86), 5059, (https://doi.org/10.21105/joss.05059)[https://doi.org/10.21105/joss.05059]
 
 or in bibtex:
 ```bibtex
