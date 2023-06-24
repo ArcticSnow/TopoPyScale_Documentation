@@ -56,7 +56,7 @@ key: {uid}:{api-key}
 
 ## How to Cite
 
-You may cite `TopoPyScale` when using it with the following: 
+You are invited to cite `TopoPyScale` when using it with the following: 
 
 Filhol S., Fiddes J., Aalstad K., (2023). TopoPyScale: A Python Package for Hillslope Climate Downscaling. Journal of Open Source Software, 8(86), 5059, (https://doi.org/10.21105/joss.05059)[https://doi.org/10.21105/joss.05059]
 
