@@ -22,6 +22,9 @@ ERA5 comes in two parts:
 ### ArcticDEM (global/Arctic)
 [ArcticDEM](https://www.pgc.umn.edu/data/arcticdem/) provides DEMs for the global Arctic region at a fine spatial resolution.
 
+### Copernicus DEM
+10m DEM over Europe including overseas territories: https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model#anchor
+
 ## Observation Dataset
 
 - [WMO](https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-observations-surface-land?tab=overview) stations (Global)
