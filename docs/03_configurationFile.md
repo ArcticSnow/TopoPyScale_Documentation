@@ -39,93 +39,95 @@ For TopoPyScale, the configuration file must contain at least the following:
 
 ```yaml
 project:
-    name: Name of the project
-    description: Describe the project
-    authors:
-        - Author 1 (can add contact and affiliation here)
-        - Author 2
-        - Author 3
-    date: Date at which the project is run. This is metadata
-    directory: /path/to/project/
+  name: Name of the project
+  description: Describe the project
+  authors:
+    - Author 1 (can add contact and affiliation here)
+    - Author 2
+    - Author 3
+  date: Date at which the project is run. This is metadata
+  directory: /path/to/project/
 
-    # start and end date of the timeperiod of interest
-    start: 2018-01-01   
-    end: 2018-01-31
-    split:
-        IO: False       # Flag to split downscaling in time or not
-        time: 2         # number of years to split timeline in
-        space: None     # NOT IMPLEMENTED
+  # start and end date of the timeperiod of interest
+  start: 2018-01-01
+  end: 2018-01-31
+  split:
+    IO: False       # Flag to split downscaling in time or not
+    time: 2         # number of years to split timeline in
+    space: None     # NOT IMPLEMENTED
 
-    # This is for the option of fetching DEM with API (NOT YET SUPPORTED)
-    extent:
+  # This is for the option of fetching DEM with API (NOT YET SUPPORTED)
+  extent:
 
-    # Indicate the number of core to use
-    CPU_cores: 4
+  # Indicate the number of core to use
+  CPU_cores: 4
 
-    # indicate which climate data to use. Currently only era5 available (see climate section below)
-    climate: era5
+  # indicate which climate data to use. Currently only era5 available (see climate section below)
+  climate: era5
 
 #.....................................................................................................
 climate:
-	# For now TopoPyScale only supports ERA5-reanalysis input climate data
-    era5:
-        path: inputs/climate/   # Can either be a absolute path or relative to the project directory
-        product: reanalysis
-        timestep: 1H
+  # For now TopoPyScale only supports ERA5-reanalysis input climate data
+  era5:
+    path: inputs/climate/   # Can either be a absolute path or relative to the project directory
+    product: reanalysis
+    timestep: 1H
 
-        # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
-        plevels: [700,750,775,800,825,850,875,900,925,950,975,1000]
-        download_threads: 12    # Number of threads to request downloads with cdsapi
-        realtime: False    # (Optional) Forces redownload of latest month of ERA5 data upon each run of code (allows daily updates for realtime applications)
-    precip_lapse_rate: True     # Apply precipitation lapse-rate correction (currently valid for Northern Hemisphere only)
+    # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
+    plevels: [ 700,750,775,800,825,850,875,900,925,950,975,1000 ]
+    download_threads: 12    # Number of threads to request downloads with cdsapi
+    realtime: False    # (Optional) Forces redownload of latest month of ERA5 data upon each run of code (allows daily updates for realtime applications)
+  precip_lapse_rate: True     # Apply precipitation lapse-rate correction (currently valid for Northern Hemisphere only)
 
 #.....................................................................................................
 dem:
-    path: C:/GIS/DEMs                       # (optional) Absolute path where the DEM file is stored
-    file: myDEM.tif                         # Name of the dem file. Must be a raster.
-    epsg: 32632                             # projection EPSG code
-    horizon_increments: 10                  # horizon increment angle in degrees
+  path: C:/GIS/DEMs                       # (optional) Absolute path where the DEM file is stored
+  file: myDEM.tif                         # Name of the dem file. Must be a raster.
+  epsg: 32632                             # projection EPSG code
+  horizon_increments: 10                  # horizon increment angle in degrees
 
 #.....................................................................................................
 sampling:
 
-	# choose downscaling using dem segmentation 'toposub' or a list of points 'points'. Possible values: toposub, points
-    method: toposub
+  # choose downscaling using dem segmentation 'toposub' or a list of points 'points'. Possible values: toposub, points
+  method: toposub
 
-    # In case method == 'points', indicate a file with a list of points and the point coordinate projection EPSG code
-    points:
-        csv_file: pt_list.csv               # filename of list of points
-        epsg: 4326                          # EPSG code of the points (x,y) coordinates in file
-        ID_col: Name                        # (optional) ID column name. The points will be stored with its value instead of a numbered point_id
+  # In case method == 'points', indicate a file with a list of points and the point coordinate projection EPSG code
+  points:
+    csv_file: pt_list.csv               # filename of list of points
+    epsg: 4326                          # EPSG code of the points (x,y) coordinates in file
+    ID_col: Name                        # (optional) ID column name. The points will be stored with its value instead of a numbered point_id
 
-    # In case method == 'toposub'
-    toposub:
-        clustering_method: minibatchkmean   # clustering method available: kmean, minibatchkmean
-        n_clusters: 50                      # number of cluster to segment the DEM
-        random_seed: 2                      # random seed for the K-mean clustering 
-        clustering_features: {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1}  # dictionnary of the features of choice to use in clustering with their relative importance. Relative importance is a multiplier after scaling
+  # In case method == 'toposub'
+  toposub:
+    clustering_method: minibatchkmean   # clustering method available: kmean, minibatchkmean
+    n_clusters: 50                      # number of cluster to segment the DEM
+    random_seed: 2                      # random seed for the K-mean clustering 
+    clustering_features: { 'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1 }  # dictionnary of the features of choice to use in clustering with their relative importance. Relative importance is a multiplier after scaling
+    clustering_mask: clustering/catchment_mask.tif # optional path to tif containing a mask (0/1)
+    clustering_groups: clustering/VEG_CODE.tif # optional path to a tif containing cluster groups (int values), e.g. land cover
 
 #.....................................................................................................
 toposcale:
-    interpolation_method: idw               # interpolation methods available: linear or idw
-    LW_terrain_contribution: True           # (bool)    Turn ON/OFF terrain contribution to longwave
+  interpolation_method: idw               # interpolation methods available: linear or idw
+  LW_terrain_contribution: True           # (bool)    Turn ON/OFF terrain contribution to longwave
 
 #.....................................................................................................
 outputs:
-    directory: C:/ERA5/Downscaled           # (optional) absolute path where to store the final downscaled products.
-    variables: all                          # list of variables to export in netcdf. ['t','p','SW']. Default None or all
-    file:
-        clean_outputs: False                # (bool)    delete the entire outputs/ directory prior to downscaling
-        clean_FSM: True                     # (bool)    delete the entire sim/ directory
-        df_centroids: df_centroids.pck      # (pickle)  dataframe containing the points of interest with their topographic features
-        ds_param: ds_param.nc               # (netcdf)  topographic parameters (slope, aspect, etc.)
-        ds_solar: ds_solar.nc               # (netcdf)  solar geometry
-        da_horizon: da_horizon.nc           # (netcdf)  horizon angles
-        landform: landform.tif              # (geotiff) rasters of of cluster labels, [TopoSub]
-        downscaled_pt: down_pt_*.nc         # (netcdf)  Downscales
+  directory: C:/ERA5/Downscaled           # (optional) absolute path where to store the final downscaled products.
+  variables: all                          # list of variables to export in netcdf. ['t','p','SW']. Default None or all
+  file:
+    clean_outputs: False                # (bool)    delete the entire outputs/ directory prior to downscaling
+    clean_FSM: True                     # (bool)    delete the entire sim/ directory
+    df_centroids: df_centroids.pck      # (pickle)  dataframe containing the points of interest with their topographic features
+    ds_param: ds_param.nc               # (netcdf)  topographic parameters (slope, aspect, etc.)
+    ds_solar: ds_solar.nc               # (netcdf)  solar geometry
+    da_horizon: da_horizon.nc           # (netcdf)  horizon angles
+    landform: landform.tif              # (geotiff) rasters of of cluster labels, [TopoSub]
+    downscaled_pt: down_pt_*.nc         # (netcdf)  Downscales
 
 clean_up:
-    delete_tmp_dirs: True                   # (optional: bool) delete the created tmp directories after downscaling?
+  delete_tmp_dirs: True                   # (optional: bool) delete the created tmp directories after downscaling?
 ```
 
 The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass('config.yml')` is created.
@@ -175,18 +177,20 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 
 ### Sampling
 
-| Field               | Example Value                                                                     | Required                    | Possible Values                         | Description                                                                                                                                                                                                                          |
-|---------------------|-----------------------------------------------------------------------------------|-----------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| method              | toposub                                                                           | yes                         | toposub, points                         | choice to run dowscaling for a list of `points` in a `.csv` file, or for a spatial job using `toposub` clustering method                                                                                                             |
-| **points**          |                                                                                   |                             |                                         |                                                                                                                                                                                                                                      |
-| csv_file            | station_list.csv                                                                  | only if method is `points`  | `*.csv`, `*.txt`                        | name of the `.csv` file containing the list of points. must contain at least the fields `x,y`                                                                                                                                        |
-| epsg                | 4326                                                                              | only if method is `points`  | EPSG CRS projection code                | EPSG CRS projection code of the coordinate `x,y` provided in the `.csv` file                                                                                                                                                         |
-| ID_col              | Name                                                                              | no                          | All column names of the csv file        | Name of the column containing a ID of the points (unique!). This Id can be number or string. It will be used to name the downscaled data at the points.                                                                              |
-| **toposub**         |                                                                                   |                             |                                         |                                                                                                                                                                                                                                      |
-| clustering_method   | minibatchkmean                                                                    | only if method is `toposub` | kmean, minibatchkmean                   | clustering method. minibatchkmean is parallelized and lot faster. See scikit-learn documentation.                                                                                                                                    |
-| n_clusters          | 10                                                                                | only if method is `toposub` | integer                                 | number of cluster k-mean will segement DEM by                                                                                                                                                                                        |
-| random_seed         | 2                                                                                 | only if method is `toposub` | integer                                 | random seed to use in k-mean                                                                                                                                                                                                         |
-| clustering_features | {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1} | only if method is `toposub` | python dict: {feature_name: importance} | Python dictionary that list which features the clustering must be done with. Importance value is a scaling factor applied to specific feature in case one feature may be more important for segmenting the DEM. Default should be 1. |
+| Field               | Example Value                                                                     | Required                                    | Possible Values                         | Description                                                                                                                                                                                                                          |
+|---------------------|-----------------------------------------------------------------------------------|---------------------------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| method              | toposub                                                                           | yes                                         | toposub, points                         | choice to run dowscaling for a list of `points` in a `.csv` file, or for a spatial job using `toposub` clustering method                                                                                                             |
+| **points**          |                                                                                   |                                             |                                         |                                                                                                                                                                                                                                      |
+| csv_file            | station_list.csv                                                                  | only if method is `points`                  | `*.csv`, `*.txt`                        | name of the `.csv` file containing the list of points. must contain at least the fields `x,y`                                                                                                                                        |
+| epsg                | 4326                                                                              | only if method is `points`                  | EPSG CRS projection code                | EPSG CRS projection code of the coordinate `x,y` provided in the `.csv` file                                                                                                                                                         |
+| ID_col              | Name                                                                              | no                                          | All column names of the csv file        | Name of the column containing a ID of the points (unique!). This Id can be number or string. It will be used to name the downscaled data at the points.                                                                              |
+| **toposub**         |                                                                                   |                                             |                                         |                                                                                                                                                                                                                                      |
+| clustering_method   | minibatchkmean                                                                    | only if method is `toposub`                 | kmean, minibatchkmean                   | clustering method. minibatchkmean is parallelized and lot faster. See scikit-learn documentation.                                                                                                                                    |
+| n_clusters          | 10                                                                                | only if method is `toposub`                 | integer                                 | number of cluster k-mean will segement DEM by                                                                                                                                                                                        |
+| random_seed         | 2                                                                                 | only if method is `toposub`                 | integer                                 | random seed to use in k-mean                                                                                                                                                                                                         |
+| clustering_features | {'x':1, 'y':1, 'elevation':4, 'slope':1, 'aspect_cos':1, 'aspect_sin':1, 'svf':1} | only if method is `toposub`                 | python dict: {feature_name: importance} | Python dictionary that list which features the clustering must be done with. Importance value is a scaling factor applied to specific feature in case one feature may be more important for segmenting the DEM. Default should be 1. |
+| clustering_mask     | clustering/catchment_mask.tif                                                     | optional (only used if method is `toposub`) | '**/*.tif'                              | Path (or relative path) to a .tif file containing the mask (0/1 values) which pixels of the DEM are used. Needs to have the same grid/resolution as the input DEM.                                                                   |
+| clustering_groups   | clustering/VEG_CODE.tif                                                           | optional (only used if method is `toposub`) | '**/*.tif'                              | Path (or relative path) to a .tif file containing integer values of groups to split the clustering into (e.g. Vegetation codes 1-9). Needs to have the same grid/resolution as the input DEM.                                        |
 
 ### Toposcale
 
@@ -213,9 +217,9 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 
 ### clean_up
 
-| Field           | Example Value | Required | Possible Values | Description                                                                        |
-|-----------------|---------------|----------|-----------------|------------------------------------------------------------------------------------|
-| delete_tmp_dirs | True          | no       | True, False     | If True, the created tmp directories will get deleted after downscaling the climate|
+| Field           | Example Value | Required | Possible Values | Description                                                                         |
+|-----------------|---------------|----------|-----------------|-------------------------------------------------------------------------------------|
+| delete_tmp_dirs | True          | no       | True, False     | If True, the created tmp directories will get deleted after downscaling the climate |
 
 ## File `csv` format for a list of points
 
