@@ -45,4 +45,23 @@ key: {uid}:{api-key}
 
 Go to [Development page](./08_Development.md)
 
+## Install Pvlib with SPA C-implementation
+By default, TopoPyScale uses the Python Numpy implementatino of Pvlib to compute solar position. The Pvlib library offers multiple method to compute the solar position, with one using a C-implementation. Because of licensing, the C files are not distributed within the Pvlib library. This requries a special manipulation to execute:
+
+1. Clone the Pvlib repository from github: `git clone git@github.com:pvlib/pvlib-python.git`
+2. uninstall the pvlib library previously installed: `pip uninstall pvlib`
+3. Go download the `spa.c` and `spa.h` from https://midcdmz.nrel.gov/spa/#register
+4. Place the files into the folder: `pvlib-python/pvlib/spa_c_files/`
+5. then :
+```sh
+# Install cython:
+pip install cython
+cd pvlib-python/pvlib/spa_c_files/
+python setup.py build_ext --inplace
+cd ../../..
+pip install .
+
+# test if installation is working correctly:
+pyhton pvlib-python/pvlib/spa_c_files/spa_py_example.py
+```
 
