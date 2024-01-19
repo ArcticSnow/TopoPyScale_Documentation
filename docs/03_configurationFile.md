@@ -85,6 +85,7 @@ dem:
   file: myDEM.tif                         # Name of the dem file. Must be a raster.
   epsg: 32632                             # projection EPSG code
   horizon_increments: 10                  # horizon increment angle in degrees
+  solar_position_method: nrel_numpy       # (optional) method to compute solar_geom with pvlib libraries.  
 
 #.....................................................................................................
 sampling:
@@ -174,6 +175,7 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | file               | ASTER_Finse.tif | yes      | `*.tif`                  | filename of the DEM                                    |
 | epsg               | 32632           | yes      | EPSG CRS projection code | EPSG CRS projection code of the DEM geoTiff            |
 | horizon_increments | 10              | yes      | 1-90                     | sector angle to compute horizon angle. Unit: `degree`. |
+| solar_position_method | nrel_c              | no      | See methods of [pvlib](https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.solarposition.get_solarposition.html)                     | pvlib can use different method to compute sun position. May require specific [installation](01_install.md) |
 
 ### Sampling
 
