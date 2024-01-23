@@ -65,3 +65,12 @@ pip install .
 pyhton pvlib-python/pvlib/spa_c_files/spa_py_example.py
 ```
 
+## Install FSM2oshd
+
+TopoPyScale incorporates an export option for the snow-canopy model FSM2oshd. This function requires elements that are outside the current scope of TopoPyScale. Missing elements are all the forest structural parameters that require the model CANRAD as well as a number of additional external dataset about forest properties. Nevertheless, the installation of FSM2oshd is as follow:
+```sh
+git clone git@github.com:ArcticSnow/FSM2oshd.git
+cd FSM2oshd
+sh compile_oshd_txt.sh
+mv FSM_OSHD path/to/my/project
+```
