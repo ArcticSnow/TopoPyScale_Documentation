@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.topo_scale`
 Toposcale functionalities S. Filhol, Oct 2021 
 
@@ -26,50 +24,10 @@ down_pt => downscaled data time series (t, u, v, q, LW, SW, tp)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L55"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>function</kbd> `multicore_pooling`
-
-```python
-multicore_pooling(fun, fun_param, n_cores)
-```
-
-Function to perform multiprocessing on n_cores 
-
-**Args:**
- 
- - <b>`fun`</b> (obj):  function to distribute 
- - <b>`fun_param zip(list)`</b>:  zip list of functino arguments 
- - <b>`n_core`</b> (int):  number o cores 
-
-
----
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L81"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>function</kbd> `multithread_pooling`
-
-```python
-multithread_pooling(fun, fun_param, n_threads)
-```
-
-Function to perform multiprocessing on n_threads 
-
-**Args:**
- 
- - <b>`fun`</b> (obj):  function to distribute 
- - <b>`fun_param zip(list)`</b>:  zip list of functino arguments 
- - <b>`n_core`</b> (int):  number of threads 
-
-
----
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L95"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `clear_files`
 
 ```python
-clear_files(path)
+clear_files(path: Union[Path, str])
 ```
 
 
@@ -79,13 +37,39 @@ clear_files(path)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L104"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+## <kbd>function</kbd> `pt_downscale_interp`
+
+```python
+pt_downscale_interp(row, ds_plev_pt, ds_surf_pt, meta)
+```
+
+
+
+
+
+
+---
+
+## <kbd>function</kbd> `pt_downscale_radiations`
+
+```python
+pt_downscale_radiations(row, ds_solar, horizon_da, meta, output_dir)
+```
+
+
+
+
+
+
+---
 
 ## <kbd>function</kbd> `downscale_climate`
 
 ```python
 downscale_climate(
     project_directory,
+    climate_directory,
+    output_directory,
     df_centroids,
     horizon_da,
     ds_solar,
@@ -95,7 +79,7 @@ downscale_climate(
     interp_method='idw',
     lw_terrain_flag=True,
     tstep='1H',
-    precip_lapse_rate_flag=True,
+    precip_lapse_rate_flag=False,
     file_pattern='down_pt*.nc',
     n_core=4
 )
@@ -107,10 +91,10 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 **Args:**
  
- - <b>`project_directory`</b>:  path to project root directory 
+ - <b>`project_directory`</b> (str):  path to project root directory climate_directory (str): output_directory (path): 
  - <b>`df_centroids`</b> (dataframe):  containing a list of point for which to downscale (includes all terrain data) 
  - <b>`horizon_da`</b> (dataarray):  horizon angles for a list of azimuth 
- - <b>`target_EPSG`</b> (int):  EPSG code of the DEM 
+ - <b>`target_EPSG`</b> (int):  EPSG code of the DEM start_date: end_date: 
  - <b>`interp_method`</b> (str):  interpolation method for horizontal interp. 'idw' or 'linear' 
  - <b>`lw_terrain_flag`</b> (bool):  flag to compute contribution of surrounding terrain to LW or ignore 
  - <b>`tstep`</b> (str):  timestep of the input data, default = 1H 
@@ -121,12 +105,10 @@ Function to perform downscaling of climate variables (t,q,u,v,tp,SW,LW) based on
 
 **Returns:**
  
- - <b>`dataset`</b>:  downscaled data organized with time, point_id, lat, long 
+ - <b>`dataset`</b>:  downscaled data organized with time, point_name, lat, long 
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_scale.py#L501"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `read_downscaled`
 

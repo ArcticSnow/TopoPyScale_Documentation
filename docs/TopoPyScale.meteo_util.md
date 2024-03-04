@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.meteo_util`
 
 
@@ -18,7 +16,18 @@
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L33"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+## <kbd>function</kbd> `steep_snow_reduce_all`
+
+```python
+steep_snow_reduce_all(snow, slope)
+```
+
+
+
+
+
+
+---
 
 ## <kbd>function</kbd> `partition_snow`
 
@@ -60,8 +69,6 @@ Function to partition precipitation in between rain vs snow based on temperature
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L96"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `q_2_rh`
 
 ```python
@@ -85,8 +92,6 @@ Function to convert specific humidity (q) to relative humidity (RH) following Bo
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L117"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `mixing_ratio`
 
 ```python
@@ -104,8 +109,6 @@ Function to compute mixing ratio
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L130"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `t_rh_2_dewT`
 
@@ -129,8 +132,6 @@ Function to compute dea temperature from air temperature and relative humidity
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L144"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `dewT_2_q_magnus`
 
 ```python
@@ -152,8 +153,6 @@ A version of the Magnus formula with the AERK parameters. AERK from Alduchov and
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/meteo_util.py#L161"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `vapor_pressure`
 

@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.topo_sub`
 Clustering routines for TopoSUB 
 
@@ -17,33 +15,27 @@ S. Filhol, Oct 2021
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `ds_to_indexed_dataframe`
 
 ```python
 ds_to_indexed_dataframe(ds)
 ```
 
-Function to convert an Xarray dataset with multi-dimensions to indexed dataframe (and not a multilevel indexed dataframe). WARNING: this only works if the variable of the dataset have all the same dimensions! 
+Function to convert dataset to dataframe 
 
-By default the ds.to_dataframe() returns a multi-index dataframe. Here the coordinates are transfered as columns in the dataframe 
-
-
+See definition of function in topo_utils.py 
 
 **Args:**
  
- - <b>`ds`</b> (dataset):  xarray dataset with all variable of same number of dimensions 
+ - <b>`ds`</b> (dataset):  xarray dataset N * 2D Dataarray 
 
 
 
 **Returns:**
- pandas dataframe:  
+ 
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `scale_df`
 
@@ -74,8 +66,6 @@ Function to scale features of a pandas dataframe
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L65"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `inverse_scale_df`
 
 ```python
@@ -105,15 +95,13 @@ Function to inverse feature scaling of a pandas dataframe
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L89"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `kmeans_clustering`
 
 ```python
 kmeans_clustering(
     df_param,
-    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
     n_clusters=100,
+    features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
     seed=None,
     **kwargs
 )
@@ -143,8 +131,6 @@ Function to perform K-mean clustering
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L122"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `minibatch_kmeans_clustering`
 
@@ -184,8 +170,6 @@ Function to perform mini-batch K-mean clustering
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L155"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `search_number_of_clusters`
 
 ```python
@@ -195,6 +179,8 @@ search_number_of_clusters(
     cluster_range=array([100, 300, 500, 700, 900]),
     features={'x': 1, 'y': 1, 'elevation': 4, 'slope': 1, 'aspect_cos': 1, 'aspect_sin': 1, 'svf': 1},
     scaler_type=StandardScaler(),
+    scaler=None,
+    seed=2,
     plot=True
 )
 ```
@@ -208,6 +194,8 @@ Function to help identify an optimum number of clusters using the elbow method
  - <b>`range_n_clusters`</b> (array int):  array of number of clusters to derive scores for 
  - <b>`features`</b> (dict):  dictionnary of features to use as predictors with their respect importance. {'x':1, 'y':1} 
  - <b>`scaler_type`</b> (scikit_learn obj):  type of scaler to use: e.g. StandardScaler() or RobustScaler() 
+ - <b>`scaler`</b> (scikit_learn obj):  fitted scaler to dataset. Implies that df_param is already scaled 
+ - <b>`seed`</b> (int):  random seed for kmeans clustering 
  - <b>`plot`</b> (bool):  plot results or not 
 
 
@@ -219,8 +207,6 @@ Function to help identify an optimum number of clusters using the elbow method
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L248"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `plot_center_clusters`
 
 ```python
@@ -229,7 +215,7 @@ plot_center_clusters(
     ds_param,
     df_centers,
     var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7fda66251160>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f8b0b6dbf10>,
     figsize=(14, 10)
 )
 ```
@@ -249,12 +235,16 @@ Function to plot the location of the cluster centroids over the DEM
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub.py#L277"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `write_landform`
 
 ```python
-write_landform(dem_file, df_param, project_directory='./')
+write_landform(
+    dem_file,
+    df_param,
+    project_directory='./',
+    out_dir: Optional[str, Path] = None,
+    out_name: Optional[str] = None
+) → Union[str, Path]
 ```
 
 Function to write a landform file which maps cluster ids to dem pixels 

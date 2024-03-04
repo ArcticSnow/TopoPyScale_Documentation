@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.topo_export`
 Functions to export topo_scale output to formats compatible with existing models (e.g. CROCUS, Cryogrid, Snowmodel, ...) 
 
@@ -12,8 +10,6 @@ TODO;
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L21"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `compute_scaling_and_offset`
 
@@ -33,12 +29,10 @@ Compute offset and scale factor for int conversion
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L39"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `to_netcdf`
 
 ```python
-to_netcdf(ds, fname='output.nc', variables=None)
+to_netcdf(ds, fname='output.nc', variables=None, complevel=9)
 ```
 
 Generic function to save a datatset to one single compressed netcdf file 
@@ -49,11 +43,10 @@ Generic function to save a datatset to one single compressed netcdf file
  
  - <b>`fname`</b> (str):  name of export file 
  - <b>`variables`</b> (list str):  list of variable to export. Default exports all variables 
+ - <b>`complevel`</b> (int):  Compression level. 1-9 
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L67"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_musa`
 
@@ -82,8 +75,6 @@ Function to export to MuSa standard.
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_cryogrid`
 
@@ -117,12 +108,57 @@ Function to export TopoPyScale downscaled dataset in a netcdf format compatible 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L217"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+## <kbd>function</kbd> `to_fsm2oshd`
+
+```python
+to_fsm2oshd(
+    ds_down,
+    fsm_param,
+    ds_tvt,
+    simulation_path='fsm_sim',
+    fname_format='fsm_',
+    namelist_options=None,
+    n_digits=None,
+    snow_partition_method='continuous',
+    cluster_method=True,
+    epsg_ds_param=2056,
+    temperature_correction=0,
+    forest_param_scaler={'vfhp': 100, 'fveg': 100, 'fves': 100, 'hcan': 100, 'lai5': 100, 'lai50': 100}
+)
+```
+
+Function to generate forcing files for FSM2oshd (https://github.com/oshd-slf/FSM2oshd). FSM2oshd includes canopy structures processes one simulation consists of 2 driving file: 
+   - met.txt with variables:  year, month, day, hour, SWdir, SWdif, LW, Sf, Rf, Ta, RH, Ua, Ps, Sf24h, Tvt 
+   - param.nam with canopy and model constants. See https://github.com/oshd-slf/FSM2oshd/blob/048e824fb1077b3a38cc24c0172ee3533475a868/runner.py#L10 
+
+
+
+**Args:**
+ 
+ - <b>`ds_down`</b>:   Downscaled weather variable dataset 
+ - <b>`fsm_param`</b>:   terrain and canopy parameter dataset 
+ - <b>`df_centroids`</b>:   cluster centroids statistics (terrain + canopy) 
+ - <b>`ds_tvt`</b> (dataset, int, float, or str):   transmisivity. Can be a dataset, a constant or 'svf_for' 
+ - <b>`simulation_path`</b> (str):  'fsm_sim' 
+ - <b>`fname_format`</b> (str): 'fsm_' 
+ - <b>`namelist_options`</b> (dict):  {'precip_multiplier':1, 'max_sd':4,'z_snow':[0.1, 0.2, 0.4], 'z_soil':[0.1, 0.2, 0.4, 0.8]} 
+ - <b>`n_digits`</b> (int):  Number of digits (for filename system) 
+ - <b>`snow_partition_method`</b> (str):  method for snow partitioning. Default: 'continuous' 
+ - <b>`cluster_method`</b> (bool):  boolean to be True is using cluster appraoch 
+ - <b>`epsg_ds_param`</b> (int):  epsg code of ds_parma: example: 2056 
+
+
+---
 
 ## <kbd>function</kbd> `to_fsm`
 
 ```python
-to_fsm(ds, fname_format='FSM_pt_*.tx', snow_partition_method='continuous')
+to_fsm(
+    ds,
+    fname_format='FSM_pt_*.tx',
+    snow_partition_method='continuous',
+    n_digits=None
+)
 ```
 
 Function to export data for FSM. 
@@ -146,12 +182,31 @@ See README.md file from FSM source code for further details
  
 - Check unit DONE jf 
 - Check format is compatible with compiled model DONE jf 
-- ensure ds.point_id.values always 
+- ensure ds.point_name.values always 
 
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L266"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+## <kbd>function</kbd> `to_TC`
+
+```python
+to_TC(ds, fname_format='pt_*.tx')
+```
+
+Function to export data for the T&C model. https://hyd.ifu.ethz.ch/research-data-models/t-c.html 
+
+
+
+**Args:**
+ 
+ - <b>`ds`</b> (dataset):  downscaled_pts, 
+ - <b>`df_pts`</b> (dataframe):  toposub.df_centroids, 
+ - <b>`fname_format`</b> (str pattern):  output format of filename 
+
+format is a text file with the following columns datetime    TA  P       PRESS RH  SWIN    LWIN    WS   WDIR (datetime) (°C) (mm/h)  (Pa)  (%) (W/m2)  (W/m2)  (m/s) (°) 
+
+
+---
 
 ## <kbd>function</kbd> `to_micromet_single_station`
 
@@ -165,7 +220,7 @@ to_micromet_single_station(
 )
 ```
 
-Function to export TopoScale output in the format for Listn's Snowmodel (using Micromet). One CSV file per point_id 
+Function to export TopoScale output in the format for Listn's Snowmodel (using Micromet). One CSV file per point_name 
 
 
 
@@ -173,7 +228,7 @@ Function to export TopoScale output in the format for Listn's Snowmodel (using M
  
  - <b>`ds`</b> (dataset):  TopoPyScale xarray dataset, downscaled product 
  - <b>`df_pts`</b> (dataframe):  with point list info (x,y,elevation,slope,aspect,svf,...) 
- - <b>`fname_format`</b> (str):  filename format. point_id is inserted where * is 
+ - <b>`fname_format`</b> (str):  filename format. point_name is inserted where * is 
  - <b>`na_values`</b> (int):  na_value default 
  - <b>`headers`</b> (bool):  add headers to file 
 
@@ -187,8 +242,6 @@ year   mo   dy    hr     stn_id  easting  northing  elevation   Tair     RH     
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L321"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_crocus`
 
@@ -204,7 +257,7 @@ to_crocus(
 )
 ```
 
-Functiont to export toposcale output to CROCUS netcdf format. Generates one file per point_id 
+Functiont to export toposcale output to CROCUS netcdf format. Generates one file per point_name 
 
 
 
@@ -212,7 +265,7 @@ Functiont to export toposcale output to CROCUS netcdf format. Generates one file
  
  - <b>`ds`</b> (dataset):  Toposcale downscaled dataset. 
  - <b>`df_pts`</b> (dataframe):  with point list info (x,y,elevation,slope,aspect,svf,...) 
- - <b>`fname_format`</b> (str):  filename format. point_id is inserted where * is 
+ - <b>`fname_format`</b> (str):  filename format. point_name is inserted where * is 
  - <b>`scale_precip`</b> (float):  scaling factor to apply on precipitation. Default is 1 
  - <b>`climate_dataset_name`</b> (str):  name of original climate dataset. Default 'ERA5', 
  - <b>`project_author`</b> (str):  name of project author(s) 
@@ -220,8 +273,6 @@ Functiont to export toposcale output to CROCUS netcdf format. Generates one file
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L439"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_snowpack`
 
@@ -245,8 +296,6 @@ SMET 1.1 ASCII [HEADER] station_id       = meteoc1 station_name     = WFJ2 latit
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export.py#L507"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_geotop`
 

@@ -22,7 +22,8 @@ nav:
         - fetch_era5: TopoPyScale.fetch_era5.md
         - fetch_dem: TopoPyScale.fetch_dem.md
         - meteo_util: TopoPyScale.meteo_util.md
-        - topo_sim: TopoPyScale.topo_sim.md
+        - sim_fsm: TopoPyScale.sim_fsm.md
+        - sim_fsm2oshd: TopoPyScale.sim_fsm2oshd.md
         - topo_export: TopoPyScale.topo_export.md
         - topo_da: TopoPyScale.topo_da.md
         - topo_obs: TopoPyScale.topo_obs.md

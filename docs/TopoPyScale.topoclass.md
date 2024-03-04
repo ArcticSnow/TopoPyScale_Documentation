@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.topoclass`
 Toposcale class definition 
 
@@ -17,12 +15,8 @@ project/  config.ini
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L36"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>class</kbd> `Topoclass`
 A python class to bring the typical use-case of toposcale in a user friendly object 
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -39,8 +33,6 @@ __init__(config_file)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L208"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `compute_dem_param`
 
 ```python
@@ -53,8 +45,6 @@ compute_dem_param()
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L404"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `compute_horizon`
 
 ```python
@@ -64,8 +54,6 @@ compute_horizon()
 Function to compute horizon angle and sample values for list of points 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L369"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `compute_solar_geometry`
 
@@ -79,8 +67,6 @@ compute_solar_geometry()
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L433"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `downscale_climate`
 
 ```python
@@ -93,7 +79,17 @@ downscale_climate()
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L248"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+### <kbd>method</kbd> `extract_grid_param`
+
+```python
+extract_grid_param()
+```
+
+
+
+
+
+---
 
 ### <kbd>method</kbd> `extract_pts_param`
 
@@ -115,8 +111,6 @@ Function to use a list point as input rather than cluster centroids from DEM seg
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L265"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `extract_topo_cluster_param`
 
 ```python
@@ -135,19 +129,15 @@ Function to segment a DEM in clusters and retain only the centroids of each clus
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L315"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `extract_topo_param`
 
 ```python
 extract_topo_param()
 ```
 
-Function to select which  
+Function to select which 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L561"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get_WMO_observations`
 
@@ -158,8 +148,6 @@ get_WMO_observations()
 Function to download and parse in-situ data from WMO database 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L515"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get_era5`
 
@@ -175,8 +163,6 @@ Funtion to call fetching of ERA5 data
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L144"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `load_project`
 
 ```python
@@ -186,8 +172,6 @@ load_project()
 Function to load pre-existing TopoPyScale project saved in files 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L218"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `search_optimum_number_of_clusters`
 
@@ -212,26 +196,22 @@ Function to test what would be an appropriate number of clusters
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L615"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `to_crocus`
 
 ```python
 to_crocus(fname_format='CROCUS_pt_*.nc', scale_precip=1)
 ```
 
-function to export toposcale output to crocus format .nc. This functions saves one file per point_id 
+function to export toposcale output to crocus format .nc. This functions saves one file per point_name 
 
 
 
 **Args:**
  
- - <b>`fout_format`</b> (str):  filename format. point_id is inserted where * is 
+ - <b>`fout_format`</b> (str):  filename format. point_name is inserted where * is 
  - <b>`scale_precip`</b> (float):  scaling factor to apply on precipitation. Default is 1 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L584"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_cryogrid`
 
@@ -245,11 +225,9 @@ wrapper function to export toposcale output to cryosgrid format from TopoClass
 
 **Args:**
  
- - <b>`fname_format`</b> (str):  filename format. point_id is inserted where * is 
+ - <b>`fname_format`</b> (str):  filename format. point_name is inserted where * is 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L609"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_fsm`
 
@@ -261,8 +239,6 @@ function to export toposcale output to FSM format
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L665"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `to_geotop`
 
 ```python
@@ -272,8 +248,6 @@ to_geotop(fname_format='meteo_*.txt')
 function to export toposcale output to FSM format 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L671"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_musa`
 
@@ -290,8 +264,6 @@ function to export TopoPyScale output in a format compatible with MuSa MuSa: htt
  - <b>`fname`</b>:  filename of the netcdf  
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L642"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_netcdf`
 
@@ -310,8 +282,6 @@ function to export toposcale output to one single generic netcdf format, compres
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L630"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `to_snowmodel`
 
 ```python
@@ -320,11 +290,9 @@ to_snowmodel(fname_format='Snowmodel_stn_*.csv')
 
 function to export toposcale output to snowmodel format .ascii, for single station standard 
 
- fout_format: str, filename format. point_id is inserted where * is 
+ fout_format: str, filename format. point_name is inserted where * is 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L659"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `to_snowpack`
 
@@ -337,8 +305,6 @@ function to export toposcale output to FSM format
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L698"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>class</kbd> `Plotting`
 Sub-Class with plotting functions for topoclass object 
 
@@ -346,8 +312,6 @@ Sub-Class with plotting functions for topoclass object
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L749"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `horizon`
 
@@ -361,14 +325,12 @@ horizon()
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L731"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `map_center_clusters`
 
 ```python
 map_center_clusters(
     background_var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7fda66251160>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x7f8b0b6dbf10>,
     hillshade=True,
     **kwargs
 )
@@ -379,8 +341,6 @@ map_center_clusters(
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L738"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `map_clusters`
 
@@ -394,8 +354,6 @@ map_clusters(**kwargs)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L724"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `map_terrain`
 
 ```python
@@ -408,8 +366,6 @@ map_terrain(var='elevation', hillshade=True, **kwargs)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L707"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ### <kbd>method</kbd> `map_variable`
 
 ```python
@@ -417,7 +373,7 @@ map_variable(
     var='t',
     time_step=1,
     time=None,
-    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7fda66257550>,
+    cmap=<matplotlib.colors.LinearSegmentedColormap object at 0x7f8b0b6f3340>,
     hillshade=True,
     **kwargs
 )
@@ -428,8 +384,6 @@ map_variable(
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L746"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `solar_geom`
 
@@ -442,8 +396,6 @@ solar_geom()
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topoclass.py#L743"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `timeseries`
 

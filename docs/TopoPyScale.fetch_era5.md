@@ -1,7 +1,5 @@
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 # <kbd>module</kbd> `TopoPyScale.fetch_era5`
 Retrieve ecmwf data with cdsapi. 
 
@@ -11,8 +9,6 @@ Retrieve ecmwf data with cdsapi.
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L18"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `retrieve_era5`
 
@@ -58,8 +54,6 @@ Sets up era5 surface retrieval. * Creates list of year/month pairs to iterate th
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L131"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `era5_request_surf`
 
 ```python
@@ -87,8 +81,6 @@ CDS surface api call
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L178"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `era5_request_plev`
 
@@ -119,8 +111,6 @@ CDS plevel api call
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L229"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
 ## <kbd>function</kbd> `era5_realtime_surf`
 
 ```python
@@ -133,8 +123,6 @@ era5_realtime_surf(eraDir, dataset, bbox, product)
 
 
 ---
-
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L252"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `era5_realtime_plev`
 
@@ -149,12 +137,10 @@ era5_realtime_plev(eraDir, dataset, bbox, product, plevels)
 
 ---
 
-<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/fetch_era5.py#L276"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>function</kbd> `return_latest_date`
+## <kbd>function</kbd> `return_last_fullday`
 
 ```python
-return_latest_date()
+return_last_fullday()
 ```
 
 
