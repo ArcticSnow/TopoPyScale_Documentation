@@ -23,8 +23,8 @@ ERA5 comes in two parts:
 [ArcticDEM](https://www.pgc.umn.edu/data/arcticdem/) provides DEMs for the global Arctic region at a fine spatial resolution.
 
 ### Copernicus DEM
-- 10m DEM over Europe including overseas territories: https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model#anchor
-- Global 30m and 90m DEM: https://sentinels.copernicus.eu/web/sentinel/-/copernicus-dem-new-direct-data-download-access
+- 10m DEM over Europe including overseas territories: [](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model#anchor)
+- Global 30m and 90m DEM: [](https://sentinels.copernicus.eu/web/sentinel/-/copernicus-dem-new-direct-data-download-access)
 
 Example downloading the Global 30m Copernicus public DEM for part of the Alps:
 ```python
