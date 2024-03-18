@@ -31,8 +31,9 @@ Example downloading the Global 30m Copernicus public DEM for part of the Alps:
 from TopoPyScale import fetch_dem as fd
 
 # extent: [East, West, South, North] boundaries.
-fd.fetch_copernicus_dem(extent=[7,10,45,47], product='COP-DEM_GLO-30-DGED/2023_1', n_download_threads=15)
+fd.fetch_copernicus_dem(extent=[7,10,45,47], product='COP-DEM_GLO-30-DGED/2023_1', n_download_threads=5)
 ```
+**Warning**: it happens the server hangs and the routine will need to be relaucnhed.
 The data are downloaded as `.tar` archive files for each tile. The script will unpack the archive. Then `gdal_merge` can be used to merge all the tiles into one single DEM with the command:
 
 ```bash
