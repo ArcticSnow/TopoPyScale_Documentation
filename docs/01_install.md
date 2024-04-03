@@ -5,21 +5,19 @@
 
 **Option 1 (recommended):**
 ```bash
-wget https://raw.githubusercontent.com/ArcticSnow/TopoPyScale/main/environment.yml
-conda env create -f environment.yml
-rm environment.yml
-```
-We recommend this option as it will install an environment with librarie versions compatible with the latest release.
-
-**Option 2:**
-```bash
 conda create -n downscaling python=3.9 ipython
 conda activate downscaling
 
 # Recomended way to install dependencies:
 conda install -c conda-forge xarray matplotlib scikit-learn pandas numpy netcdf4 h5netcdf rasterio pyproj dask
 ```
-WARNING: in case dependencies have been updated, there might be incompatibilities. 
+
+**Option 2:**
+```bash
+wget https://raw.githubusercontent.com/ArcticSnow/TopoPyScale/main/environment.yml
+conda env create -f environment.yml
+rm environment.yml
+```
 
 ## Latest Release Installation
 
