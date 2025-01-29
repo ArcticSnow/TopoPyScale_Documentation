@@ -1,5 +1,7 @@
 <!-- markdownlint-disable -->
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 # <kbd>module</kbd> `TopoPyScale.topo_compare`
 
 
@@ -7,6 +9,8 @@
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_trend#L9"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `correct_trend`
 
@@ -31,6 +35,8 @@ Function to estimate linear trend correction.
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/correct_seasonal#L51"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `correct_seasonal`
 
@@ -62,6 +68,8 @@ Function to correct for seasonal signal.  1. it groups all days by day_of_year a
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_compare/obs_vs_downscaled#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `obs_vs_downscaled`
 

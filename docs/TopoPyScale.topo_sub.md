@@ -1,5 +1,7 @@
 <!-- markdownlint-disable -->
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 # <kbd>module</kbd> `TopoPyScale.topo_sub`
 Clustering routines for TopoSUB 
 
@@ -14,6 +16,8 @@ S. Filhol, Oct 2021
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/ds_to_indexed_dataframe#L27"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `ds_to_indexed_dataframe`
 
@@ -36,6 +40,8 @@ See definition of function in topo_utils.py
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/scale_df#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `scale_df`
 
@@ -66,6 +72,8 @@ Function to scale features of a pandas dataframe
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/inverse_scale_df#L66"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `inverse_scale_df`
 
 ```python
@@ -94,6 +102,8 @@ Function to inverse feature scaling of a pandas dataframe
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/kmeans_clustering#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `kmeans_clustering`
 
@@ -131,6 +141,8 @@ Function to perform K-mean clustering
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/minibatch_kmeans_clustering#L123"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `minibatch_kmeans_clustering`
 
@@ -170,6 +182,8 @@ Function to perform mini-batch K-mean clustering
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/search_number_of_clusters#L157"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `search_number_of_clusters`
 
 ```python
@@ -207,6 +221,8 @@ Function to help identify an optimum number of clusters using the elbow method
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/plot_center_clusters#L264"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `plot_center_clusters`
 
 ```python
@@ -215,7 +231,7 @@ plot_center_clusters(
     ds_param,
     df_centers,
     var='elevation',
-    cmap=<matplotlib.colors.ListedColormap object at 0x7f8b0b6dbf10>,
+    cmap=<matplotlib.colors.ListedColormap object at 0x72cb4b5c7dc0>,
     figsize=(14, 10)
 )
 ```
@@ -234,6 +250,8 @@ Function to plot the location of the cluster centroids over the DEM
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_sub/write_landform#L293"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `write_landform`
 
