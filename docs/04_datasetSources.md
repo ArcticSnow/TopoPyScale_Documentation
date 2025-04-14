@@ -4,11 +4,21 @@ TopoPyScale relies on two main types of data: climate and topographical data. Th
 
 ## Climate data
 
-### ERA5-copernicus
+### ERA5
+
 ERA5 comes in two parts:
 
 - [Hourly land](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land?tab=overview)
 - [Hourly pressure levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-pressure-levels?tab=overview)
+
+#### From Copernicus repository
+
+Copernicus whom generate the ERA5 data is also a portal to download the data. TopoPyScale has a routine to download the data given identification to the cds system has been done.
+
+#### From Google Cloud Storage repository
+
+Google Cloud Storage maintains a publicly accessible repository of the ERA5 data. TopoPyScale includes a routine to download data from there given authentification to Google Cloud has been done has explained by Google: https://cloud.google.com/sdk/docs/install
+
 
 ## Digital Elevation models
 

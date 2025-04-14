@@ -3,6 +3,8 @@
 ## Python Environment Preparation
 `TopoPyScale` is tested for Python 3.9. You may create a new virtual environment using conda prior to installation.
 
+**WARNING:** TopoPyScale requires the library [topocalc](https://github.com/USDA-ARS-NWRC/topocalc/tree/main) that is no longer maintained and itself requires Numpy<2.0.
+
 **Option 1 (recommended):**
 ```bash
 wget https://raw.githubusercontent.com/ArcticSnow/TopoPyScale/main/environment.yml
@@ -40,6 +42,11 @@ Then you need to setup your `cdsapi` with the Copernicus API key system. Follow 
 url: https://cds.climate.copernicus.eu/api/v2
 key: {uid}:{api-key}
 ```
+
+## Setting up Google Cloud authentification
+
+In order to use the routine to download ERA5 data from the [Google Cloud Storage](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arco-era5?invt=AbudXg&project=era5access), you will need to setup your system with the `google-cloud-cli`. Follow Google's instructions: https://cloud.google.com/sdk/docs/install
+
 
 ## Development version Installation
 

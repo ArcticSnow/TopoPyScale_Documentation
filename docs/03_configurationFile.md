@@ -75,8 +75,10 @@ climate:
 
     # Choose pressure levels relevant to your project and evailable in ERA5 Pressure Levels
     plevels: [ 700,750,775,800,825,850,875,900,925,950,975,1000 ]
-    download_threads: 12    # Number of threads to request downloads with cdsapi
+    download_threads: 1    # Number of threads to request downloads with cdsapi
     realtime: False    # (Optional) Forces redownload of latest month of ERA5 data upon each run of code (allows daily updates for realtime applications)
+    data_repository: google_cloud_storage  # repository from where to download data: cds (copernicus official ERA5), google_cloud_storage (Google archive of ERA5)
+
   precip_lapse_rate: True     # Apply precipitation lapse-rate correction (currently valid for Northern Hemisphere only)
 
 #.....................................................................................................
@@ -163,7 +165,8 @@ The file `config.yml` is parsed by TopoPyScale at the time the class `topoclass(
 | product           | reanalysis         | y        | reanalysis      | no other product available at the moment.                                                                          |
 | timestep          | 1H                 | y        | 1H              | timestep to run TopoPyScale. Currently only 1H available                                                           |
 | plevels           | [700,800,900,1000] | y        | array           | Indicate ERA5 pressure level to use. The lower pressure level must be higher than the highest elevation of the DEM |
-| download_threads  | 12                 | y        | integer         | Number of downloading threads to use with cdsapi                                                                   |
+| download_threads  | 12                 | y        | integer         | Number of downloading threads to use                                                                    |
+| data_repository  | google_cloud_storage | y        | string         | Indicate which data repositoryt to download data from: 'cds or google_cloud_storage                  |
 | realtime          | False              | n        | True, False     | Upon each new run of code redownloads latest month (ERA5T) to obtain daily updates of partial months.              |
 | precip_lapse_rate | True               | y        | True, False     | Apply precipitation lapse rate                                                                                     |
 
