@@ -33,8 +33,28 @@ Google Cloud Storage maintains a publicly accessible repository of the ERA5 data
 [ArcticDEM](https://www.pgc.umn.edu/data/arcticdem/) provides DEMs for the global Arctic region at a fine spatial resolution.
 
 ### Copernicus DEM
-- 10m DEM over Europe including overseas territories: https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model#anchor
-- Global 30m and 90m DEM: https://sentinels.copernicus.eu/web/sentinel/-/copernicus-dem-new-direct-data-download-access
+The European Copernicus program produces a series of digital elevation product based on a number of data sources. These dataset are:
+- 10m DEM over Europe including overseas territories: [](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model#anchor)
+- Global 30m and 90m DEM: [](https://sentinels.copernicus.eu/web/sentinel/-/copernicus-dem-new-direct-data-download-access)
+
+Example downloading the Global 30m Copernicus public DEM for part of the Alps:
+```python
+from TopoPyScale import fetch_dem as fd
+
+# extent: [East, West, South, North] boundaries.
+fd.fetch_copernicus_dem(extent=[7,10,45,47], product='COP-DEM_GLO-30-DGED/2023_1', n_download_threads=5)
+```
+**Warning**: it may happen the server hangs and the routine will need to be relaunched.
+The data are downloaded as `.tar` archive files for each tile. The script will unpack the archive. Then `gdal_merge` can be used to merge all the tiles into one single DEM with the command:
+
+```bash
+# Create a text file listing all tiles to merge
+ls Copernicus_DSM_*.tif > tile_list.txt
+
+# Merge tiles into one single DEM with -9999 as NaN
+gdal_merge.py -init -9999 -o Copernicus_DSM_merged.tif --optfile tile_list.txt
+```
+
 
 ## Observation Dataset
 

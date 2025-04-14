@@ -1,5 +1,7 @@
 <!-- markdownlint-disable -->
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 # <kbd>module</kbd> `TopoPyScale.topo_export`
 Functions to export topo_scale output to formats compatible with existing models (e.g. CROCUS, Cryogrid, Snowmodel, ...) 
 
@@ -10,6 +12,8 @@ TODO;
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/compute_scaling_and_offset#L26"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `compute_scaling_and_offset`
 
@@ -29,6 +33,8 @@ Compute offset and scale factor for int conversion
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_netcdf#L45"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `to_netcdf`
 
 ```python
@@ -47,6 +53,8 @@ Generic function to save a datatset to one single compressed netcdf file
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_musa#L75"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_musa`
 
@@ -75,6 +83,8 @@ Function to export to MuSa standard.
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_cryogrid#L156"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_cryogrid`
 
@@ -107,6 +117,51 @@ Function to export TopoPyScale downscaled dataset in a netcdf format compatible 
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_fsm2#L245"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `to_fsm2`
+
+```python
+to_fsm2(
+    ds_down,
+    fsm_param,
+    simulation_path='fsm_sim',
+    fname_format='fsm_',
+    namelist_options=None,
+    n_digits=None,
+    snow_partition_method='continuous',
+    cluster_method=True,
+    epsg_ds_param=2056,
+    temperature_correction=0,
+    forest_param_scaler={'hcan': 100, 'lai': 100}
+)
+```
+
+Function to generate forcing files for FSM2oshd (https://github.com/oshd-slf/FSM2oshd). FSM2oshd includes canopy structures processes one simulation consists of 2 driving file: 
+   - met.txt with variables:  year, month, day, hour, SWdir, SWdif, LW, Sf, Rf, Ta, RH, Ua, Ps, Sf24h, Tvt 
+   - param.nam with canopy and model constants. See https://github.com/oshd-slf/FSM2oshd/blob/048e824fb1077b3a38cc24c0172ee3533475a868/runner.py#L10 
+
+
+
+**Args:**
+ 
+ - <b>`ds_down`</b>:   Downscaled weather variable dataset 
+ - <b>`fsm_param`</b>:   terrain and canopy parameter dataset 
+ - <b>`df_centroids`</b>:   cluster centroids statistics (terrain + canopy) 
+ - <b>`ds_tvt`</b> (dataset, int, float, or str):   transmisivity. Can be a dataset, a constant or 'svf_for' 
+ - <b>`simulation_path`</b> (str):  'fsm_sim' 
+ - <b>`fname_format`</b> (str): 'fsm_' 
+ - <b>`namelist_options`</b> (dict):  {'precip_multiplier':1, 'max_sd':4,'z_snow':[0.1, 0.2, 0.4], 'z_soil':[0.1, 0.2, 0.4, 0.8]} 
+ - <b>`n_digits`</b> (int):  Number of digits (for filename system) 
+ - <b>`snow_partition_method`</b> (str):  method for snow partitioning. Default: 'continuous' 
+ - <b>`cluster_method`</b> (bool):  boolean to be True is using cluster appraoch 
+ - <b>`epsg_ds_param`</b> (int):  epsg code of ds_parma: example: 2056 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_fsm2oshd#L651"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_fsm2oshd`
 
@@ -150,6 +205,8 @@ Function to generate forcing files for FSM2oshd (https://github.com/oshd-slf/FSM
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_fsm#L962"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `to_fsm`
 
 ```python
@@ -187,6 +244,8 @@ See README.md file from FSM source code for further details
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_TC#L1010"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `to_TC`
 
 ```python
@@ -207,6 +266,8 @@ format is a text file with the following columns datetime    TA  P       PRESS R
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_micromet_single_station#L1053"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_micromet_single_station`
 
@@ -243,6 +304,8 @@ year   mo   dy    hr     stn_id  easting  northing  elevation   Tair     RH     
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_crocus#L1109"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `to_crocus`
 
 ```python
@@ -274,6 +337,50 @@ Functiont to export toposcale output to CROCUS netcdf format. Generates one file
 
 ---
 
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_surfex#L1252"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `to_surfex`
+
+```python
+to_surfex(
+    ds,
+    df_pts,
+    fname_format='FORCING*.nc',
+    scale_precip=1,
+    climate_dataset_name='ERA5',
+    project_author='S. Filhol',
+    snow_partition_method='continuous',
+    year_start='2023-08-01 00:00:00',
+    year_end='2024-06-30 23:00:00'
+)
+```
+
+Function to export toposcale output to Surfex forcing netcdf format. Generates one file per year 
+
+
+
+**Args:**
+ 
+ - <b>`ds`</b> (dataset):  Toposcale downscaled dataset. 
+ - <b>`df_pts`</b> (dataframe):  with point list info (x,y,elevation,slope,aspect,svf,...) 
+ - <b>`fname_format`</b> (str):  filename format. point_name is inserted where * is 
+ - <b>`scale_precip`</b> (float):  scaling factor to apply on precipitation. Default is 1 
+ - <b>`climate_dataset_name`</b> (str):  name of original climate dataset. Default 'ERA5', 
+ - <b>`project_author`</b> (str):  name of project author(s) 
+ - <b>`snow_partition_method`</b> (str):  snow/rain partitioning method: default 'jennings2018_trivariate' 
+ - <b>`year_start`</b> (str):  start of year for yearly Surfex forcing 
+
+
+
+**ToDo:**
+ 
+- [x] split to yearly files, 
+
+
+---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_snowpack#L1414"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `to_snowpack`
 
 ```python
@@ -296,6 +403,8 @@ SMET 1.1 ASCII [HEADER] station_id       = meteoc1 station_name     = WFJ2 latit
 
 
 ---
+
+<a href="https://github.com/ArcticSnow/TopoPyScale/TopoPyScale/topo_export/to_geotop#L1481"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `to_geotop`
 
